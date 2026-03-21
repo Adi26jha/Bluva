@@ -1,0 +1,30 @@
+/* BLUVA Root Reset - V3 */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+:root {
+  /* Allow the document to grow naturally */
+  height: auto !important;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* CRITICAL: Must be auto for GSAP pinning to show the bottom of the page */
+  height: auto !important;
+  overflow-x: hidden;
+  display: block;
+}
+
+/* Ensure the horizontal section doesn't create extra white space */
+.overflow-x-clip {
+  overflow-x: clip;
+}

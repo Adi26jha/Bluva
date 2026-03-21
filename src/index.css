@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-base: #0A1628;
+  --color-brand-blue: #00B4D8;
+  --color-accent-cyan: #90E0EF;
+  --color-accent-highlight: #CAF0F8;
+  --color-pure-white: #FFFFFF;
+
+  --font-editorial: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --animate-shimmer: shimmer 6s infinite;
+
+  @keyframes shimmer {
+    0% {
+      transform: translate(-100%, -100%) rotate(45deg);
+    }
+
+    100% {
+      transform: translate(100%, 100%) rotate(45deg);
+    }
+  }
+}
+
+@layer base {
+
+  /* CRITICAL: GSAP Pinned sections need these to be auto/natural */
+  html {
+    scroll-behavior: smooth;
+    height: auto !important;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-navy-base);
+    color: var(--color-pure-white);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    height: auto !important;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 180, 216, 0.05) 0%, transparent 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-editorial;
+  }
+}
+
+@layer components {
+
+  /* Fixes the horizontal container width calculation */
+  .flex-nowrap {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl;
+  }
+
+  .glass-card-dark {
+    background-color: color-mix(in srgb, var(--color-navy-base) 40%, transparent);
+    @apply backdrop-blur-lg border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    background-color: var(--color-brand-blue);
+    color: var(--color-navy-base);
+    @apply px-8 py-3 font-bold rounded-full transition-all duration-300 hover:bg-accent-cyan hover:scale-105 active:scale-95 shadow-lg shadow-brand-blue/20;
+  }
+
+  .btn-outline {
+    border-color: var(--color-brand-blue);
+    color: var(--color-brand-blue);
+    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-300 hover:bg-brand-blue hover:text-navy-base active:scale-95;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to right, var(--color-brand-blue), var(--color-accent-cyan));
+    @apply bg-clip-text text-transparent;
+  }
+}
+
+/* Custom Water Shader Effects */
+.water-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.1) 55%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: rotate(45deg);
+  @apply animate-shimmer;
+}
+
+.glow-mesh {
+  box-shadow: 0 0 50px rgba(0, 180, 216, 0.3);
+}
+
+/* Scrollbar Utility for the Product Strip */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Force the Quality middle section to occupy space */
+section[ref="containerRef"],
+.relative.h-screen.w-full.flex.items-center {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 100vh !important;
+  z-index: 10 !important;
+}
+
+/* Ensure the horizontal track is actually wide */
+div[ref="horizontalRef"],
+.flex.flex-nowrap.items-center {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  /* Force it to expand to content width */
+}
