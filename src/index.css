@@ -136,20 +136,36 @@
   scrollbar-width: none;
 }
 
-/* Force the Quality middle section to occupy space */
-#quality-horizontal-container {
+/* Force the Quality and Timeline sections to occupy space and layer correctly */
+#quality-horizontal-container,
+.manufacturing-timeline-section {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
   min-height: 100vh !important;
-  z-index: 10 !important;
+  z-index: 20 !important; /* Higher than LiquidEther/PersistentBackground */
   position: relative !important;
+  overflow: visible !important;
+  background: transparent !important;
 }
 
-/* Ensure the horizontal track is actually wide */
-#quality-horizontal-track {
+/* Ensure the horizontal track is actually wide and tall */
+#quality-horizontal-track,
+.manufacturing-horizontal-track {
   display: flex !important;
+  flex-direction: row !important;
   flex-wrap: nowrap !important;
+  height: 100% !important;
   width: max-content !important; 
+  align-items: center !important;
+  will-change: transform;
   /* Critical: forces the container to expand beyond window width */
+}
+
+/* Ensure individual cards aren't collapsed or invisible */
+.process-bubble, 
+.timeline-card {
+  flex-shrink: 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }

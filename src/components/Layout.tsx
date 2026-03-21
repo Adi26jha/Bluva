@@ -32,7 +32,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
               duration: 0.6, 
               ease: [0.43, 0.13, 0.23, 0.96] // Custom cubic-bezier for a "fluid" feel
             }}
-            className="relative w-full"
+            className="relative w-full framer-motion-wrapper"
           >
             {children}
           </motion.main>

@@ -19,28 +19,32 @@ const Quality = () => {
   const horizontalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx: gsap.Context;
-
-    const initGSAP = () => {
-      ctx = gsap.context(() => {
+    // Use a slight delay to ensure fonts/CSS are applied
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
         if (!containerRef.current || !horizontalRef.current) return;
 
-        const pinSection = containerRef.current;
-        const scrollContent = horizontalRef.current;
+        const track = horizontalRef.current;
+        const container = containerRef.current;
 
-        // Ensure measurements are fresh
+        // Force calculate the width after the delay
+        const totalWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+
+        // 1. Ensure measurements are fresh
         ScrollTrigger.refresh();
 
         // 2. The Main Horizontal Scroll Tween
-        const scrollTween = gsap.to(scrollContent, {
-          x: () => -(scrollContent.scrollWidth - window.innerWidth),
+        const scrollTween = gsap.to(track, {
+          x: () => -(totalWidth - viewportWidth),
           ease: "none",
           scrollTrigger: {
-            trigger: pinSection,
+            trigger: container,
             pin: true,
             scrub: 1,
             start: "top top",
-            end: () => `+=${scrollContent.scrollWidth}`,
+            // The end should match the width exactly
+            end: () => `+=${totalWidth}`,
             invalidateOnRefresh: true,
             refreshPriority: 1,
             anticipatePin: 1
@@ -63,27 +67,16 @@ const Quality = () => {
             }
           );
         });
-
-        // Final refresh after setup
-        ScrollTrigger.refresh();
       }, containerRef);
-    };
 
-    // Wait for EVERYTHING (images, fonts, videos) to load before calculating
-    const handleLoad = () => ScrollTrigger.refresh();
-    window.addEventListener('load', handleLoad);
-
-    const timer = setTimeout(() => {
-      initGSAP();
-      // Force a re-calculation after the initial render
+      // CRITICAL: Refresh after the context is set
       ScrollTrigger.refresh();
-    }, 500);
+      
+      // Scoped cleanup
+      return () => ctx.revert();
+    }, 500); // 500ms is safer for full paint
 
-    return () => {
-      window.removeEventListener('load', handleLoad);
-      clearTimeout(timer);
-      if (ctx) ctx.revert();
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
