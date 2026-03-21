@@ -73,13 +73,22 @@
   .btn-primary {
     background-color: var(--color-brand-blue);
     color: var(--color-navy-base);
-    @apply px-8 py-3 font-bold rounded-full transition-all duration-300 hover:bg-accent-cyan hover:scale-105 active:scale-95 shadow-lg shadow-brand-blue/20;
+    @apply px-8 py-3 font-bold rounded-full transition-all duration-500 hover:bg-accent-cyan hover:scale-105 active:scale-95 shadow-lg shadow-brand-blue/20 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white/20 -translate-x-full skew-x-12 transition-transform duration-700 ease-out;
+  }
+
+  .btn-primary:hover::before {
+    @apply translate-x-full;
   }
 
   .btn-outline {
     border-color: var(--color-brand-blue);
     color: var(--color-brand-blue);
-    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-300 hover:bg-brand-blue hover:text-navy-base active:scale-95;
+    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-500 hover:bg-brand-blue/10 hover:shadow-[0_0_20px_rgba(0,180,216,0.2)] active:scale-95 relative overflow-hidden;
   }
 
   .text-gradient {
