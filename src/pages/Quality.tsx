@@ -20,9 +20,8 @@ const Quality = () => {
 
   useEffect(() => {
     let ctx: gsap.Context;
-    
-    // 1. We use a small timeout to ensure the DOM is painted and fonts are loaded
-    const timer = setTimeout(() => {
+
+    const initGSAP = () => {
       ctx = gsap.context(() => {
         if (!containerRef.current || !horizontalRef.current) return;
 
@@ -68,11 +67,22 @@ const Quality = () => {
         // Final refresh after setup
         ScrollTrigger.refresh();
       }, containerRef);
+    };
+
+    // Wait for EVERYTHING (images, fonts, videos) to load before calculating
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', handleLoad);
+
+    const timer = setTimeout(() => {
+      initGSAP();
+      // Force a re-calculation after the initial render
+      ScrollTrigger.refresh();
     }, 500);
 
     return () => {
+      window.removeEventListener('load', handleLoad);
       clearTimeout(timer);
-      if (ctx) ctx.revert(); // Scoped cleanup for React 18/19
+      if (ctx) ctx.revert();
     };
   }, []);
 
@@ -96,7 +106,7 @@ const Quality = () => {
       </section>
 
       {/* Horizontal Journey Section */}
-      <section id="quality-horizontal-container" ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden border-y border-white/5 bg-navy-base">
+      <section id="quality-horizontal-container" ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden border-y border-white/5 bg-navy-base z-[5]">
 
         {/* Background Parallax Layer */}
         <div className="absolute inset-0 pointer-events-none opacity-20">

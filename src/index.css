@@ -27,20 +27,22 @@
 @layer base {
 
   /* CRITICAL: GSAP Pinned sections need these to be auto/natural */
-  html {
-    scroll-behavior: smooth;
+  /* Force GSAP to see the full document height - THE NUCLEAR RESET */
+  html, body, #root {
     height: auto !important;
-    overflow-x: hidden;
-  }
-
-  body {
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    /* Prevent Framer Motion from locking the scroll during transitions */
+    overflow-y: visible !important; 
     background-color: var(--color-navy-base);
     color: var(--color-pure-white);
     font-family: var(--font-body);
-    min-height: 100vh;
-    height: auto !important;
-    overflow-x: hidden;
-    background-image: radial-gradient(circle at 50% 50%, rgba(0, 180, 216, 0.05) 0%, transparent 100%);
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure no parent container is clipping the GSAP Pin Spacer */
+  main, .framer-motion-wrapper {
+    overflow: visible !important;
   }
 
   h1,
