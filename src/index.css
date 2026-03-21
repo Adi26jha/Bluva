@@ -26,23 +26,27 @@
 
 @layer base {
 
-  /* CRITICAL: GSAP Pinned sections need these to be auto/natural */
-  /* Force GSAP to see the full document height - THE NUCLEAR RESET */
-  html, body, #root {
+  /* THE NUCLEAR RESET: Ensures GSAP Pinning works across all browsers */
+  html,
+  body,
+  #root {
     height: auto !important;
     min-height: 100vh !important;
     overflow-x: hidden !important;
-    /* Prevent Framer Motion from locking the scroll during transitions */
-    overflow-y: visible !important; 
+    overflow-y: visible !important;
     background-color: var(--color-navy-base);
     color: var(--color-pure-white);
     font-family: var(--font-body);
     scroll-behavior: smooth;
   }
 
-  /* Ensure no parent container is clipping the GSAP Pin Spacer */
-  main, .framer-motion-wrapper {
+  /* Prevent Framer Motion or Layout wrappers from clipping the Pin-Spacer */
+  main,
+  .framer-motion-wrapper,
+  .flex-grow {
     overflow: visible !important;
+    display: block !important;
+    width: 100%;
   }
 
   h1,
@@ -63,70 +67,69 @@
     flex-wrap: nowrap !important;
   }
 
-  .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl;
-  }
-
   .glass-card-dark {
-    background-color: color-mix(in srgb, var(--color-navy-base) 40%, transparent);
+    background-color: rgba(10, 22, 40, 0.7);
     @apply backdrop-blur-lg border border-white/10 rounded-2xl;
-  }
-
-  .btn-primary {
-    background-color: var(--color-brand-blue);
-    color: var(--color-navy-base);
-    @apply px-8 py-3 font-bold rounded-full transition-all duration-500 hover:bg-accent-cyan hover:scale-105 active:scale-95 shadow-lg shadow-brand-blue/20 relative overflow-hidden;
-  }
-
-  .btn-primary::before {
-    content: '';
-    @apply absolute inset-0 bg-white/20 -translate-x-full skew-x-12 transition-transform duration-700 ease-out;
-  }
-
-  .btn-primary:hover::before {
-    @apply translate-x-full;
   }
 
   .btn-outline {
     border-color: var(--color-brand-blue);
     color: var(--color-brand-blue);
-    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-500 hover:bg-brand-blue/10 hover:shadow-[0_0_20px_rgba(0,180,216,0.2)] active:scale-95 relative overflow-hidden;
-  }
-
-  .text-gradient {
-    background-image: linear-gradient(to right, var(--color-brand-blue), var(--color-accent-cyan));
-    @apply bg-clip-text text-transparent;
+    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-500 hover:bg-brand-blue/10 relative overflow-hidden;
   }
 }
 
-/* Custom Water Shader Effects */
-.water-shimmer {
-  position: relative;
-  overflow: hidden;
+/* --- GSAP SPECIFIC FIXES --- */
+
+/* 1. Force the Pinned Sections to stay ABOVE the background */
+#quality-horizontal-container,
+.manufacturing-timeline-section {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  z-index: 20 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  /* Contains the moving track */
+  background-color: transparent !important;
 }
 
-.water-shimmer::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.1) 45%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.1) 55%,
-      rgba(255, 255, 255, 0) 100%);
-  transform: rotate(45deg);
-  @apply animate-shimmer;
+/* 2. MAGIC SAUCE: Max-Content forces the track to be wider than the screen */
+#quality-horizontal-track,
+.manufacturing-horizontal-track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  height: 100% !important;
+  align-items: center !important;
+  padding-left: 10vw;
+  padding-right: 20vw;
+  will-change: transform;
 }
 
-.glow-mesh {
-  box-shadow: 0 0 50px rgba(0, 180, 216, 0.3);
+/* 3. Ensure cards don't shrink or vanish */
+.process-bubble,
+.timeline-card {
+  flex-shrink: 0 !important;
+  width: 80vw !important;
+  max-width: 500px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-right: 5rem;
 }
 
-/* Scrollbar Utility for the Product Strip */
+@media (min-width: 768px) {
+
+  .process-bubble,
+  .timeline-card {
+    width: 500px !important;
+  }
+}
+
+/* Utility for the Product Strip */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -134,38 +137,4 @@
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* Force the Quality and Timeline sections to occupy space and layer correctly */
-#quality-horizontal-container,
-.manufacturing-timeline-section {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  min-height: 100vh !important;
-  z-index: 20 !important; /* Higher than LiquidEther/PersistentBackground */
-  position: relative !important;
-  overflow: visible !important;
-  background: transparent !important;
-}
-
-/* Ensure the horizontal track is actually wide and tall */
-#quality-horizontal-track,
-.manufacturing-horizontal-track {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  height: 100% !important;
-  width: max-content !important; 
-  align-items: center !important;
-  will-change: transform;
-  /* Critical: forces the container to expand beyond window width */
-}
-
-/* Ensure individual cards aren't collapsed or invisible */
-.process-bubble, 
-.timeline-card {
-  flex-shrink: 0 !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }

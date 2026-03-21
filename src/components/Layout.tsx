@@ -11,36 +11,45 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="relative min-h-screen w-full bg-[#0A1628] flex flex-col">
-      {/* 1. Background Layer */}
+      {/* 1. Background Layer - Forced to lowest Z-index */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <PersistentBackground />
       </div>
 
-      {/* 2. Logic & UI */}
+      {/* 2. Global UI components */}
       <ScrollToTop />
       <Header />
 
-      {/* 3. Page Content */}
+      {/* 3. Page Content Wrapper */}
       <div className="flex-grow relative z-10">
         <AnimatePresence mode="wait">
           <motion.main
             key={location.pathname}
-            initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.98 }}
-            animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-            exit={{ opacity: 0, filter: 'blur(10px)', scale: 1.02 }}
-            transition={{ 
-              duration: 0.6, 
-              ease: [0.43, 0.13, 0.23, 0.96] // Custom cubic-bezier for a "fluid" feel
+            /* CRITICAL FIX: 
+               Removed 'scale' and 'filter' transitions. 
+               Framer Motion's scale/filter creates a new stacking context 
+               that hides GSAP pinned elements. 
+            */
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut"
             }}
-            className="relative w-full framer-motion-wrapper"
+            /* CRITICAL FIX: 
+               Forced overflow: visible to allow GSAP's pin-spacer 
+               to expand the height of the document naturally.
+            */
+            className="relative w-full overflow-visible framer-motion-wrapper"
           >
             {children}
           </motion.main>
         </AnimatePresence>
       </div>
 
-      {/* 4. Footer - Moved outside AnimatePresence to stay in document flow */}
-      <div className="relative z-20 w-full mt-auto">
+      {/* 4. Footer - Stays at the bottom of the natural document flow */}
+      <div className="relative z-20 w-full mt-auto bg-[#0A1628]">
         <Footer />
       </div>
     </div>
