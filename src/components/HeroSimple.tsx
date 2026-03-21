@@ -42,7 +42,7 @@ const HeroSimple = () => {
             </div>
           </div>
 
-          <h1 className="text-7xl md:text-9xl font-editorial font-bold text-white tracking-widest leading-tight">
+          <h1 className="text-5xl md:text-9xl font-editorial font-bold text-white tracking-widest leading-tight">
             Pure Indulgence.<br />
             <span className="text-brand-blue italic">Liquid Luxury.</span>
           </h1>
@@ -66,10 +66,10 @@ const HeroSimple = () => {
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
+        className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
       >
         <span className="text-[10px] uppercase tracking-[0.5em] text-white">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-px h-8 md:h-12 bg-gradient-to-b from-white to-transparent" />
       </motion.div>
     </section>
   );
