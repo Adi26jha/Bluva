@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Droplet, CheckCircle2, FileText, ChevronRight } from 'lucide-react';
+import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 
 const products = [
   {

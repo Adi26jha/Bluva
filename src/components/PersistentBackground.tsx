@@ -31,6 +31,7 @@ const Particles = ({ count = 50 }) => {
   return (
     <points ref={meshRef}>
       <bufferGeometry>
+        {/* @ts-ignore */}
         <bufferAttribute
           attach="attributes-position"
           count={particles.length / 3}

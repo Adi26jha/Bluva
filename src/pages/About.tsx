@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Target, Eye, Quote, ArrowRight } from 'lucide-react';
+import { Target, Eye, Quote } from 'lucide-react';
 
 const About = () => {
   return (
