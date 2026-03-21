@@ -29,6 +29,9 @@ const Quality = () => {
         const pinSection = containerRef.current;
         const scrollContent = horizontalRef.current;
 
+        // Ensure measurements are fresh
+        ScrollTrigger.refresh();
+
         // 2. The Main Horizontal Scroll Tween
         const scrollTween = gsap.to(scrollContent, {
           x: () => -(scrollContent.scrollWidth - window.innerWidth),
@@ -40,7 +43,7 @@ const Quality = () => {
             start: "top top",
             end: () => `+=${scrollContent.scrollWidth}`,
             invalidateOnRefresh: true,
-            refreshPriority: 1, // High priority for the main pinned section
+            refreshPriority: 1,
             anticipatePin: 1
           }
         });
@@ -62,9 +65,10 @@ const Quality = () => {
           );
         });
 
+        // Final refresh after setup
         ScrollTrigger.refresh();
       }, containerRef);
-    }, 200);
+    }, 500);
 
     return () => {
       clearTimeout(timer);
@@ -92,7 +96,7 @@ const Quality = () => {
       </section>
 
       {/* Horizontal Journey Section */}
-      <section ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden border-y border-white/5 bg-navy-base">
+      <section id="quality-horizontal-container" ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden border-y border-white/5 bg-navy-base">
 
         {/* Background Parallax Layer */}
         <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -100,7 +104,7 @@ const Quality = () => {
         </div>
 
         {/* The Track that moves horizontally */}
-        <div ref={horizontalRef} className="flex flex-nowrap items-center gap-20 px-[15vw] will-change-transform">
+        <div id="quality-horizontal-track" ref={horizontalRef} className="flex flex-nowrap items-center gap-20 px-[15vw] will-change-transform">
           {processSteps.map((step, idx) => (
             <div key={idx} className="process-bubble w-[85vw] md:w-[550px] shrink-0">
               <div className="glass-card-dark p-12 md:p-16 rounded-[3rem] border-white/10 group hover:border-brand-blue/30 transition-all duration-700">

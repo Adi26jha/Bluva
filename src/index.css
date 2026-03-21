@@ -135,20 +135,19 @@
 }
 
 /* Force the Quality middle section to occupy space */
-section[ref="containerRef"],
-.relative.h-screen.w-full.flex.items-center {
+#quality-horizontal-container {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
   min-height: 100vh !important;
   z-index: 10 !important;
+  position: relative !important;
 }
 
 /* Ensure the horizontal track is actually wide */
-div[ref="horizontalRef"],
-.flex.flex-nowrap.items-center {
+#quality-horizontal-track {
   display: flex !important;
   flex-wrap: nowrap !important;
-  width: max-content !important;
-  /* Force it to expand to content width */
+  width: max-content !important; 
+  /* Critical: forces the container to expand beyond window width */
 }
