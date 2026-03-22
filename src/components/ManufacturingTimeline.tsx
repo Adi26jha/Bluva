@@ -57,11 +57,11 @@ const ManufacturingTimeline = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full bg-[#0A1628] overflow-hidden z-20 border-t border-white/5">
+    <section ref={containerRef} className="relative h-screen w-full bg-navy-base overflow-hidden z-20 border-t border-slate-200">
 
       {/* Editorial Title Background */}
       <div className="absolute top-24 left-10 md:left-24 z-30 pointer-events-none">
-        <h2 className="text-6xl md:text-9xl font-editorial text-white opacity-[0.03] uppercase tracking-tighter leading-none select-none">
+        <h2 className="text-6xl md:text-9xl font-editorial text-slate-900 opacity-[0.03] uppercase tracking-tighter leading-none select-none">
           Process<br />
           <span className="text-brand-blue italic">Excellence</span>
         </h2>
@@ -71,10 +71,10 @@ const ManufacturingTimeline = () => {
         {milestones.map((item, idx) => (
           <div
             key={idx}
-            className="timeline-card w-[80vw] md:w-[45vw] h-[60vh] shrink-0 glass-card-dark p-12 md:p-14 border-white/10 relative group flex flex-col justify-center overflow-hidden hover:border-brand-blue/30 transition-all duration-700"
+            className="timeline-card w-[80vw] md:w-[45vw] h-[60vh] shrink-0 glass-card-dark p-12 md:p-14 relative group flex flex-col justify-center overflow-hidden hover:border-brand-blue/30 transition-all duration-700"
           >
             {/* Ghost Number Overlay */}
-            <span className="absolute -top-10 -right-10 text-[12rem] font-editorial font-bold text-white/[0.02] group-hover:text-brand-blue/[0.05] transition-colors duration-1000 select-none">
+            <span className="absolute -top-10 -right-10 text-[12rem] font-editorial font-bold text-slate-900/[0.03] group-hover:text-brand-blue/[0.05] transition-colors duration-1000 select-none">
               0{idx + 1}
             </span>
 
@@ -82,10 +82,10 @@ const ManufacturingTimeline = () => {
               <div className="w-16 h-16 rounded-2xl bg-brand-blue/5 border border-brand-blue/20 flex items-center justify-center mb-8 group-hover:bg-brand-blue/20 transition-all duration-500">
                 <item.icon className="text-brand-blue" size={32} />
               </div>
-              <h3 className="text-4xl font-editorial text-white mb-4 group-hover:text-brand-blue transition-colors">
+              <h3 className="text-4xl font-editorial text-slate-900 mb-4 group-hover:text-brand-blue transition-colors">
                 {item.title}
               </h3>
-              <p className="text-white/40 text-lg font-body leading-relaxed max-w-xs">
+              <p className="text-slate-400 text-lg font-body leading-relaxed max-w-xs">
                 {item.desc}
               </p>
             </div>
@@ -97,7 +97,7 @@ const ManufacturingTimeline = () => {
 
         {/* Closing card */}
         <div className="timeline-card w-[70vw] md:w-[35vw] h-[60vh] shrink-0 flex flex-col justify-center items-center text-center">
-          <h3 className="text-5xl font-editorial italic text-white mb-6">Purity <br /><span className="text-brand-blue">Redefined.</span></h3>
+          <h3 className="text-5xl font-editorial italic text-slate-900 mb-6">Purity <br /><span className="text-brand-blue">Redefined.</span></h3>
           <div className="w-px h-24 bg-gradient-to-b from-brand-blue to-transparent" />
         </div>
       </div>

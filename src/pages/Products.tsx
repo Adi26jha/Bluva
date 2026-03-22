@@ -11,7 +11,7 @@ const products = [
     description: 'Our most portable option, perfect for short commutes, quick meetings, or event catering. Compact yet delivering the same pure hydration as our larger bottles.',
     benefits: ['Eco-friendly material', 'Pocket-sized convenience', '5-step purified'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/0A1628/00B4D8?text=250ml'
+    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=250ml'
   },
   {
     id: '500ml',
@@ -21,7 +21,7 @@ const products = [
     description: 'The industry standard for a reason. Our 500ml bottle is designed for active lifestyles, fitting perfectly in car cup holders and gym bags.',
     benefits: ['Ergonomic grip', 'Optimal daily portion', 'Ozone treated'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/0A1628/00B4D8?text=500ml'
+    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=500ml'
   },
   {
     id: '1000ml',
@@ -31,7 +31,7 @@ const products = [
     description: 'For those who take hydration seriously. The 1 Liter bottle ensures you have enough pure water to last through intense workouts or long office hours.',
     benefits: ['Value pack', 'Full day hydration', 'Recyclable PET'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/0A1628/00B4D8?text=1000ml'
+    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=1000ml'
   },
   {
     id: 'jeera',
@@ -41,7 +41,7 @@ const products = [
     description: 'A refreshing traditional Indian digestif with a modern twist. Infused with natural cumin extracts and a proprietary blend of spices for that perfect kick.',
     benefits: ['Aids digestion', 'Natural extracts', 'Refreshing taste'],
     composition: { energy: '42 kcal', sugar: '10g', fat: '0g' },
-    image: 'https://placehold.co/600x1200/0A1628/00B4D8?text=Jeera'
+    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=Jeera'
   }
 ];
 
@@ -63,20 +63,20 @@ const Products = () => {
         >
           Our <span className="text-brand-blue italic">Product</span> Line
         </motion.h1>
-        <p className="text-white/40 max-w-2xl mx-auto">
+        <p className="text-slate-400 max-w-2xl mx-auto">
           From pure hydration to traditional refreshments, explore our range of bottled excellence.
         </p>
       </section>
 
       {/* Sticky Sub-nav */}
-      <nav className="sticky top-20 z-40 bg-navy-base/80 backdrop-blur-xl border-y border-white/5 py-4">
+      <nav className="sticky top-20 z-40 bg-navy-base/80 backdrop-blur-xl border-y border-slate-200 py-4">
         <div className="container mx-auto px-6 flex justify-center gap-4 md:gap-12">
           {['All', 'Packaged Water', 'Jeera Water'].map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`text-sm font-bold uppercase tracking-widest transition-all duration-300 relative pb-2 ${
-                activeFilter === filter ? 'text-brand-blue' : 'text-white/30 hover:text-white'
+                activeFilter === filter ? 'text-brand-blue' : 'text-slate-400 hover:text-slate-900'
               }`}
             >
               {filter}
@@ -123,22 +123,22 @@ const Products = () => {
               {/* Content Side */}
               <div className="w-full lg:w-1/2 space-y-8">
                 <div className="space-y-4">
-                  <span className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-blue">
+                  <span className="inline-block px-3 py-1 bg-white shadow-sm border border-slate-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-blue">
                     {product.size} Available
                   </span>
                   <h2 className="text-4xl md:text-6xl font-editorial">{product.name}</h2>
                 </div>
 
-                <p className="text-white/50 text-xl leading-relaxed">
+                <p className="text-slate-500 text-xl leading-relaxed">
                   {product.description}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/80 border-b border-white/5 pb-2">Key Benefits</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-700 border-b border-slate-200 pb-2">Key Benefits</h4>
                     <ul className="space-y-2">
                       {product.benefits.map((benefit, bIdx) => (
-                        <li key={bIdx} className="flex gap-3 text-sm text-white/50 items-center">
+                        <li key={bIdx} className="flex gap-3 text-sm text-slate-500 items-center">
                           <CheckCircle2 size={16} className="text-brand-blue" />
                           {benefit}
                         </li>
@@ -146,11 +146,11 @@ const Products = () => {
                     </ul>
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white/80 border-b border-white/5 pb-2">Composition</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-700 border-b border-slate-200 pb-2">Composition</h4>
                     <div className="flex flex-wrap gap-2">
                       {Object.entries(product.composition).map(([key, val], cIdx) => (
-                        <span key={cIdx} className="px-3 py-1 rounded bg-navy-base border border-white/5 text-[10px] uppercase font-medium">
-                          <span className="text-white/30 mr-1">{key}:</span> {val}
+                        <span key={cIdx} className="px-3 py-1 rounded bg-navy-base border border-slate-200 text-[10px] uppercase font-medium">
+                          <span className="text-slate-400 mr-1">{key}:</span> {val}
                         </span>
                       ))}
                     </div>
@@ -162,7 +162,7 @@ const Products = () => {
                     <FileText size={18} />
                     Download Brochure
                   </button>
-                  <button className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white/40 hover:text-brand-blue transition-colors group">
+                  <button className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-brand-blue transition-colors group">
                     Inquire for B2B
                     <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -174,7 +174,7 @@ const Products = () => {
       </div>
 
       {/* Related Products / Upsell */}
-      <section className="py-32 bg-white/5">
+      <section className="py-32 bg-white shadow-sm">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-editorial mb-12">Looking for More?</h2>
           <div className="flex flex-wrap justify-center gap-8 opacity-40 grayscale pointer-events-none">

@@ -17,10 +17,10 @@ import {
 } from 'lucide-react';
 
 const products = [
-  { id: '250ml', name: 'Packaged Water', size: '250ml', description: 'Perfect for events and quick hydration.', image: 'https://placehold.co/400x800/0A1628/00B4D8?text=250ml' },
-  { id: '500ml', name: 'Packaged Water', size: '500ml', description: 'The ideal companion for your daily move.', image: 'https://placehold.co/400x800/0A1628/00B4D8?text=500ml' },
-  { id: '1000ml', name: 'Packaged Water', size: '1000ml', description: 'Stay hydrated all day with our liter bottle.', image: 'https://placehold.co/400x800/0A1628/00B4D8?text=1000ml' },
-  { id: 'jeera', name: 'Jeera Water', size: '200ml', description: 'Refreshing traditional digestif with a twist.', image: 'https://placehold.co/400x800/0A1628/00B4D8?text=Jeera' },
+  { id: '250ml', name: 'Packaged Water', size: '250ml', description: 'Perfect for events and quick hydration.', image: 'https://placehold.co/400x800/F8FAFC/00B4D8?text=250ml' },
+  { id: '500ml', name: 'Packaged Water', size: '500ml', description: 'The ideal companion for your daily move.', image: 'https://placehold.co/400x800/F8FAFC/00B4D8?text=500ml' },
+  { id: '1000ml', name: 'Packaged Water', size: '1000ml', description: 'Stay hydrated all day with our liter bottle.', image: 'https://placehold.co/400x800/F8FAFC/00B4D8?text=1000ml' },
+  { id: 'jeera', name: 'Jeera Water', size: '200ml', description: 'Refreshing traditional digestif with a twist.', image: 'https://placehold.co/400x800/F8FAFC/00B4D8?text=Jeera' },
 ];
 
 const features = [
@@ -57,12 +57,12 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6 text-white/70 text-lg leading-relaxed"
+              className="space-y-6 text-slate-600 text-lg leading-relaxed"
             >
               <p>
                 Founded by three young entrepreneurs, BLUVA is more than just water. It's a commitment to safe hydration, conscious living, and the essence of purity.
               </p>
-              <Link to="/about" className="inline-block text-brand-blue font-bold tracking-widest uppercase text-sm border-b border-brand-blue/30 pb-2 hover:text-white hover:border-white transition-all">
+              <Link to="/about" className="inline-block text-brand-blue font-bold tracking-widest uppercase text-sm border-b border-brand-blue/30 pb-2 hover:text-slate-900 hover:border-slate-900 transition-all">
                 Our Full Story →
               </Link>
             </motion.div>
@@ -94,7 +94,7 @@ const Home = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <h2 className="text-5xl md:text-7xl mb-6">Why <span className="text-brand-blue">BLUVA?</span></h2>
-            <p className="text-white/50">Redefining hydration through purity, innovation, and conscious intent.</p>
+            <p className="text-slate-500">Redefining hydration through purity, innovation, and conscious intent.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -119,13 +119,13 @@ const Home = () => {
               <motion.div
                 key={i}
                 whileHover={{ rotateY: 5, rotateX: 5 }}
-                className="glass-card p-10 text-center space-y-4 border-white/5"
+                className="glass-card p-10 text-center space-y-4 border-slate-200"
               >
-                <div className="w-32 h-32 rounded-full bg-white/10 mx-auto mb-6 flex items-center justify-center border border-white/20">
-                  <span className="text-2xl font-bold text-white/30">Founder {i}</span>
+                <div className="w-32 h-32 rounded-full bg-white shadow-sm mx-auto mb-6 flex items-center justify-center border border-slate-200">
+                  <span className="text-2xl font-bold text-slate-400">Founder {i}</span>
                 </div>
                 <h3 className="text-2xl font-editorial">Co-Founder</h3>
-                <p className="text-white/40 text-sm">Visionary entrepreneur dedicated to purity and hydration.</p>
+                <p className="text-slate-400 text-sm">Visionary entrepreneur dedicated to purity and hydration.</p>
               </motion.div>
             ))}
           </div>
@@ -133,27 +133,27 @@ const Home = () => {
       </section>
 
       {/* Contact Strip */}
-      <section className="bg-navy-base py-20 border-t border-white/5">
+      <section className="bg-navy-base py-20 border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center gap-4">
               <Phone className="text-brand-blue" size={24} />
               <div className="space-y-1">
-                <p className="text-xs uppercase tracking-widest text-white/40">Call Us</p>
+                <p className="text-xs uppercase tracking-widest text-slate-400">Call Us</p>
                 <p className="text-sm">+91 9773838578</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
               <Mail className="text-brand-blue" size={24} />
               <div className="space-y-1">
-                <p className="text-xs uppercase tracking-widest text-white/40">Email Us</p>
+                <p className="text-xs uppercase tracking-widest text-slate-400">Email Us</p>
                 <p className="text-sm">bluvapackagedwater@gmail.com</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
               <MapPin className="text-brand-blue" size={24} />
               <div className="space-y-1">
-                <p className="text-xs uppercase tracking-widest text-white/40">Visit Us</p>
+                <p className="text-xs uppercase tracking-widest text-slate-400">Visit Us</p>
                 <p className="text-sm">West Punjabi Bagh, New Delhi</p>
               </div>
             </div>

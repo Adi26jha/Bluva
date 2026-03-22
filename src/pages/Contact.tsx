@@ -50,18 +50,18 @@ const Contact = () => {
                 Get In <br />
                 <span className="text-brand-blue italic">Touch</span>
               </h1>
-              <p className="text-white/40 text-xl max-w-md leading-relaxed">
+              <p className="text-slate-400 text-xl max-w-md leading-relaxed">
                 Have a question or feedback? We'd love to hear from you. Reach out through any of our channels.
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
                   <Phone className="text-brand-blue" size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest text-white/30 mb-2">Call Us</h4>
+                  <h4 className="text-xs uppercase tracking-widest text-slate-400 mb-2">Call Us</h4>
                   <div className="space-y-1">
                     <p className="text-lg">+91 9773838578</p>
                     <p className="text-lg">+91 9811727224</p>
@@ -71,21 +71,21 @@ const Contact = () => {
               </div>
 
               <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
                   <Mail className="text-brand-blue" size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest text-white/30 mb-2">Email Us</h4>
+                  <h4 className="text-xs uppercase tracking-widest text-slate-400 mb-2">Email Us</h4>
                   <p className="text-lg">bluvapackagedwater@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center group-hover:border-brand-blue/50 transition-colors">
                   <MapPin className="text-brand-blue" size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest text-white/30 mb-2">Visit Us</h4>
+                  <h4 className="text-xs uppercase tracking-widest text-slate-400 mb-2">Visit Us</h4>
                   <p className="text-lg leading-relaxed">
                     18 Arihant Nagar, West Punjabi Bagh,<br />
                     New Delhi 110026
@@ -95,10 +95,10 @@ const Contact = () => {
             </div>
 
             <div className="flex gap-4 pt-4">
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-blue/10 transition-colors">
+              <a href="#" className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue/10 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-blue/10 transition-colors">
+              <a href="#" className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue/10 transition-colors">
                 <Facebook size={20} />
               </a>
             </div>
@@ -108,7 +108,7 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="glass-card p-8 md:p-12 border-white/10"
+            className="glass-card p-8 md:p-12 border-slate-200"
           >
             {isSubmitSuccessful ? (
               <div className="text-center py-20 space-y-6">
@@ -116,44 +116,44 @@ const Contact = () => {
                     <Droplets className="text-brand-blue" size={40} />
                   </div>
                   <h3 className="text-3xl font-editorial">Message Sent!</h3>
-                  <p className="text-white/50">Your inquiry has been successfully transmitted. We will get back to you shortly.</p>
+                  <p className="text-slate-500">Your inquiry has been successfully transmitted. We will get back to you shortly.</p>
                   <button onClick={() => window.location.reload()} className="btn-outline">Send Again</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest text-white/40">Full Name</label>
+                  <label className="text-xs uppercase tracking-widest text-slate-400">Full Name</label>
                   <input 
                     {...register("name")}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
+                    className="w-full bg-white shadow-sm border border-slate-200 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
                   />
                   {errors.name && <p className="text-red-400 text-[10px]">{errors.name.message}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/40">Phone Number</label>
+                    <label className="text-xs uppercase tracking-widest text-slate-400">Phone Number</label>
                     <input 
                       {...register("phone")}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
+                      className="w-full bg-white shadow-sm border border-slate-200 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
                     />
                     {errors.phone && <p className="text-red-400 text-[10px]">{errors.phone.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-white/40">Email Address</label>
+                    <label className="text-xs uppercase tracking-widest text-slate-400">Email Address</label>
                     <input 
                       {...register("email")}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
+                      className="w-full bg-white shadow-sm border border-slate-200 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
                     />
                     {errors.email && <p className="text-red-400 text-[10px]">{errors.email.message}</p>}
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest text-white/40">Subject</label>
+                  <label className="text-xs uppercase tracking-widest text-slate-400">Subject</label>
                   <select 
                     {...register("subject")}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white/60 focus:border-brand-blue outline-none transition-colors appearance-none"
+                    className="w-full bg-white shadow-sm border border-slate-200 rounded-lg px-4 py-3 text-slate-600 focus:border-brand-blue outline-none transition-colors appearance-none"
                   >
                     <option value="">Select a subject</option>
                     <option value="General">General Inquiry</option>
@@ -165,11 +165,11 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest text-white/40">Your Message</label>
+                  <label className="text-xs uppercase tracking-widest text-slate-400">Your Message</label>
                   <textarea 
                     {...register("message")}
                     rows={5}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
+                    className="w-full bg-white shadow-sm border border-slate-200 rounded-lg px-4 py-3 focus:border-brand-blue outline-none transition-colors"
                   />
                   {errors.message && <p className="text-red-400 text-[10px]">{errors.message.message}</p>}
                 </div>
@@ -210,7 +210,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest">Our Headquarters</p>
-                <p className="text-[10px] text-white/50">Arihant Nagar, New Delhi</p>
+                <p className="text-[10px] text-slate-500">Arihant Nagar, New Delhi</p>
               </div>
            </div>
         </div>
@@ -221,7 +221,7 @@ const Contact = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
            <div className="space-y-2 text-center md:text-left">
               <h3 className="text-3xl font-editorial">Looking to partner?</h3>
-              <p className="text-white/40">Join our distribution network across India.</p>
+              <p className="text-slate-400">Join our distribution network across India.</p>
            </div>
            <Link to="/b2b" className="btn-primary flex items-center gap-3">
               Use B2B Form

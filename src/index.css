@@ -2,11 +2,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-base: #0A1628;
+  --color-navy-base: #F8FAFC;
   --color-brand-blue: #00B4D8;
   --color-accent-cyan: #90E0EF;
   --color-accent-highlight: #CAF0F8;
+  --color-bg-light: #FFFFFF;
   --color-pure-white: #FFFFFF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
 
   --font-editorial: "Cormorant Garamond", serif;
   --font-body: "DM Sans", sans-serif;
@@ -34,8 +37,8 @@
     min-height: 100vh !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
-    background-color: var(--color-navy-base);
-    color: var(--color-pure-white);
+    background-color: var(--color-bg-light) !important;
+    color: var(--text-main) !important;
     font-family: var(--font-body);
     scroll-behavior: smooth;
   }
@@ -67,15 +70,25 @@
     flex-wrap: nowrap !important;
   }
 
+  .glass-card,
   .glass-card-dark {
-    background-color: rgba(10, 22, 40, 0.7);
-    @apply backdrop-blur-lg border border-white/10 rounded-2xl;
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 20px 50px rgba(0, 180, 216, 0.05); /* Very subtle blue shadow */
+    @apply rounded-2xl;
   }
 
   .btn-outline {
     border-color: var(--color-brand-blue);
     color: var(--color-brand-blue);
-    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-500 hover:bg-brand-blue/10 relative overflow-hidden;
+    background: transparent;
+    @apply px-8 py-3 border-2 font-bold rounded-full transition-all duration-500 relative overflow-hidden;
+  }
+  
+  .btn-outline:hover {
+    background: var(--color-brand-blue);
+    color: white;
   }
 }
 
@@ -92,9 +105,10 @@
   z-index: 20 !important;
   position: relative !important;
   overflow: hidden !important;
-  /* Contains the moving track */
-  background-color: transparent !important;
-}
+      /* Contains the moving track */
+      background-color: #F1F5F9 !important;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
 /* 2. MAGIC SAUCE: Max-Content forces the track to be wider than the screen */
 #quality-horizontal-track,

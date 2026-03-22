@@ -73,16 +73,16 @@ const Quality = () => {
           <h1 className="text-7xl md:text-[10rem] font-editorial font-bold mb-8 leading-[0.8] tracking-tighter">
             Pure <span className="text-brand-blue italic">Alchemy.</span>
           </h1>
-          <p className="text-white/40 max-w-xl mx-auto text-lg leading-relaxed font-body">
+          <p className="text-slate-400 max-w-xl mx-auto text-lg leading-relaxed font-body">
             Refining the essence of life through a five-stage journey of absolute molecular perfection.
           </p>
         </motion.div>
       </section>
 
       {/* 2. Horizontal Scroll Journey */}
-      <section ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden z-20 border-y border-white/5 bg-navy-base">
+      <section ref={containerRef} className="relative h-screen w-full flex items-center overflow-hidden z-20 border-y border-slate-200 bg-navy-base">
         <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-brand-blue/10 blur-[150px] rounded-full animate-pulse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-brand-blue/5 blur-[150px] rounded-full animate-pulse" />
         </div>
 
         <div ref={horizontalRef} className="flex flex-nowrap items-center gap-24 px-[20vw] will-change-transform">
@@ -94,9 +94,9 @@ const Quality = () => {
                   <div className="w-20 h-20 rounded-3xl bg-brand-blue/10 flex items-center justify-center border border-brand-blue/20 group-hover:rotate-[360deg] transition-all duration-1000">
                     <step.icon className="text-brand-blue" size={36} />
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-editorial text-white">{step.title}</h3>
+                  <h3 className="text-4xl md:text-5xl font-editorial text-slate-900">{step.title}</h3>
                 </div>
-                <p className="text-white/40 text-xl leading-relaxed mb-12 font-body">{step.desc}</p>
+                <p className="text-slate-400 text-xl leading-relaxed mb-12 font-body">{step.desc}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold tracking-[0.3em] text-brand-blue/60 uppercase">Certified Process</span>
                   <ArrowRight className="text-brand-blue opacity-0 group-hover:opacity-100 transition-all" size={24} />
@@ -105,7 +105,7 @@ const Quality = () => {
             </div>
           ))}
           <div className="process-bubble w-[80vw] md:w-[600px] shrink-0 pr-32">
-            <h3 className="text-7xl md:text-[10rem] font-editorial italic text-white/90 leading-[0.8] mb-10">
+            <h3 className="text-7xl md:text-[10rem] font-editorial italic text-slate-900 leading-[0.8] mb-10">
               Life, <br /> <span className="text-brand-blue">Perfected.</span>
             </h3>
           </div>
@@ -113,12 +113,12 @@ const Quality = () => {
       </section>
 
       {/* 3. Certifications Section */}
-      <section className="py-60 bg-navy-base border-t border-white/5">
+      <section className="py-60 bg-navy-base border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/3">
               <h2 className="text-5xl md:text-6xl font-editorial italic mb-8 leading-tight">Certified <br />Excellence.</h2>
-              <p className="text-white/40 leading-relaxed mb-10 text-lg">
+              <p className="text-slate-400 leading-relaxed mb-10 text-lg">
                 Our plant undergoes rigorous hourly testing to maintain international benchmarks of quality and safety.
               </p>
               <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue font-bold tracking-[0.2em] text-xs uppercase">
@@ -137,13 +137,13 @@ const Quality = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-10 border border-white/5 hover:border-brand-blue/20 transition-all duration-500 rounded-[2.5rem] bg-white/[0.02] group"
+                  className="p-10 border border-slate-200 hover:border-brand-blue/20 transition-all duration-500 rounded-[2.5rem] bg-white shadow-sm group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center mb-6 group-hover:bg-brand-blue/10 transition-colors">
                     <cert.icon className="text-brand-blue" size={24} />
                   </div>
-                  <h4 className="text-2xl font-editorial mb-4 text-white/80">{cert.title}</h4>
-                  <p className="text-white/40 text-sm leading-relaxed">{cert.desc}</p>
+                  <h4 className="text-2xl font-editorial mb-4 text-slate-900">{cert.title}</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">{cert.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -157,7 +157,7 @@ const Quality = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="relative group cursor-pointer overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_0_50px_rgba(0,180,216,0.1)] aspect-video bg-navy-base"
+            className="relative group cursor-pointer overflow-hidden rounded-[3rem] border border-slate-200 shadow-[0_0_50px_rgba(0,180,216,0.1)] aspect-video bg-navy-base"
           >
             <img
               src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2000"

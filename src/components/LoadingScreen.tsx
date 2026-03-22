@@ -67,7 +67,7 @@ const LoadingScreen = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
-                className="text-5xl md:text-7xl font-editorial font-bold text-white tracking-[0.3em] uppercase"
+                className="text-5xl md:text-7xl font-editorial font-bold text-slate-900 tracking-[0.3em] uppercase"
               >
                 BLUVA
               </motion.h1>
@@ -90,7 +90,7 @@ const LoadingScreen = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-6 text-xs tracking-[1em] uppercase text-white font-body"
+              className="mt-6 text-xs tracking-[1em] uppercase text-slate-900 font-body"
             >
               Pure Indulgence
             </motion.p>

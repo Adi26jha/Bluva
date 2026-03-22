@@ -42,12 +42,12 @@ const HeroSimple = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-9xl font-editorial font-bold text-white tracking-widest leading-tight">
+          <h1 className="text-5xl md:text-9xl font-editorial font-bold text-slate-900 tracking-widest leading-tight">
             Pure Indulgence.<br />
             <span className="text-brand-blue italic">Liquid Luxury.</span>
           </h1>
           
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto tracking-[0.2em] uppercase">
+          <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto tracking-[0.2em] uppercase">
             Let's Hydrate. <span className="text-accent-cyan">Let's BLUVA.</span>
           </p>
 
@@ -55,7 +55,7 @@ const HeroSimple = () => {
             <Link to="/products" className="btn-primary">
               Explore Products
             </Link>
-            <Link to="/about" className="text-white/40 hover:text-white tracking-widest uppercase text-sm font-bold border-b border-white/10 pb-2 transition-all">
+            <Link to="/about" className="text-slate-400 hover:text-slate-900 tracking-widest uppercase text-sm font-bold border-b border-slate-200 pb-2 transition-all">
               Our Vision →
             </Link>
           </div>
@@ -68,8 +68,8 @@ const HeroSimple = () => {
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
       >
-        <span className="text-[10px] uppercase tracking-[0.5em] text-white">Scroll</span>
-        <div className="w-px h-8 md:h-12 bg-gradient-to-b from-white to-transparent" />
+        <span className="text-[10px] uppercase tracking-[0.5em] text-slate-900">Scroll</span>
+        <div className="w-px h-8 md:h-12 bg-gradient-to-b from-slate-900 to-transparent" />
       </motion.div>
     </section>
   );

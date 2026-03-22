@@ -21,7 +21,7 @@ const About = () => {
           transition={{ duration: 1 }}
           className="relative z-10 text-center"
         >
-          <h1 className="text-6xl md:text-8xl font-editorial font-bold text-white tracking-widest">
+          <h1 className="text-6xl md:text-8xl font-editorial font-bold text-slate-900 tracking-widest">
             Our Story
           </h1>
         </motion.div>
@@ -45,7 +45,7 @@ const About = () => {
             </h2>
             <div className="relative pl-8 border-l-2 border-brand-blue/30 py-4">
               <Quote className="absolute -left-4 top-0 text-brand-blue/20" size={40} />
-              <p className="text-2xl font-editorial italic text-white/80 leading-relaxed">
+              <p className="text-2xl font-editorial italic text-slate-700 leading-relaxed">
                 "We set out to create a brand that doesn't just hydrate bodies, but also reflects the values of trust and transparency."
               </p>
             </div>
@@ -54,7 +54,7 @@ const About = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 text-white/60 text-lg leading-relaxed pt-10"
+            className="space-y-6 text-slate-600 text-lg leading-relaxed pt-10"
           >
             <p>
               BLUVA was founded by three young entrepreneurs who saw a gap in the market for premium packaged water that resonates with the conscious consumer. We believe hydration is a fundamental right, and safety is a standard that should never be compromised.
@@ -67,7 +67,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-white/5 relative">
+      <section className="py-24 bg-white shadow-sm relative">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
@@ -78,7 +78,7 @@ const About = () => {
                 <Target className="text-brand-blue" size={32} />
               </div>
               <h3 className="text-3xl font-editorial">Our Mission</h3>
-              <p className="text-white/50 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed">
                 To deliver safe, high-quality, and refreshing hydration products while fostering a culture of health and sustainability in every community we serve.
               </p>
             </motion.div>
@@ -90,7 +90,7 @@ const About = () => {
                 <Eye className="text-accent-cyan" size={32} />
               </div>
               <h3 className="text-3xl font-editorial">Our Vision</h3>
-              <p className="text-white/50 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed">
                 To become the most trusted beverage brand in India, recognized for our commitment to purity, innovation, and conscious living.
               </p>
             </motion.div>
@@ -121,19 +121,19 @@ const About = () => {
               <div className="w-full md:w-1/2">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-brand-blue/20 blur-3xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative aspect-square rounded-2xl overflow-hidden glass-card-dark border-white/10 flex items-center justify-center bg-white/5">
-                    <span className="text-4xl font-editorial text-white/20 capitalize">{founder.name.split(' ').map(n=>n[0]).join('')}</span>
+                  <div className="relative aspect-square rounded-2xl overflow-hidden glass-card-dark border-slate-200 flex items-center justify-center bg-white shadow-sm">
+                    <span className="text-4xl font-editorial text-slate-900/10 capitalize">{founder.name.split(' ').map(n=>n[0]).join('')}</span>
                   </div>
                 </div>
               </div>
               <div className="w-full md:w-1/2 space-y-6">
                 <h3 className="text-4xl font-editorial font-bold">{founder.name}</h3>
                 <p className="text-brand-blue font-bold tracking-[0.2em] uppercase text-sm">{founder.role}</p>
-                <p className="text-white/50 text-xl leading-relaxed italic">
+                <p className="text-slate-500 text-xl leading-relaxed italic">
                   "{founder.bio}"
                 </p>
                 <div className="pt-4 flex gap-6">
-                  <a href="#" className="text-white/30 hover:text-brand-blue transition-colors uppercase text-[10px] font-bold tracking-widest border-b border-white/10 pb-1">LinkedIn Profile</a>
+                  <a href="#" className="text-slate-400 hover:text-brand-blue transition-colors uppercase text-[10px] font-bold tracking-widest border-b border-slate-200 pb-1">LinkedIn Profile</a>
                 </div>
               </div>
             </motion.div>
@@ -142,7 +142,7 @@ const About = () => {
       </section>
 
       {/* Timeline Section Placeholder */}
-      <section className="py-32 bg-navy-base border-t border-white/5">
+      <section className="py-32 bg-navy-base border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-editorial font-bold uppercase tracking-widest">Our Journey</h2>
@@ -165,7 +165,7 @@ const About = () => {
                 </div>
                 <div className="pt-2">
                   <h4 className="text-2xl font-editorial mb-2">{step.title}</h4>
-                  <p className="text-white/40 leading-relaxed">{step.desc}</p>
+                  <p className="text-slate-400 leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}

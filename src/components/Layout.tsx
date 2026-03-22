@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   return (
-    <div className="relative min-h-screen w-full bg-[#0A1628] flex flex-col">
+    <div className="relative min-h-screen w-full bg-navy-base flex flex-col">
       {/* 1. Background Layer - Forced to lowest Z-index */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <PersistentBackground />
@@ -49,7 +49,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </div>
 
       {/* 4. Footer - Stays at the bottom of the natural document flow */}
-      <div className="relative z-20 w-full mt-auto bg-[#0A1628]">
+      <div className="relative z-20 w-full mt-auto bg-navy-base">
         <Footer />
       </div>
     </div>
