@@ -30,8 +30,29 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log(data);
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "13929ac0-3251-466b-9c2d-59a5851c3e57",
+          ...data,
+          from_name: "Bluva Website (Contact Form)",
+          subject: `New Contact Inquiry: ${data.subject}`
+        }),
+      });
+
+      const result = await response.json();
+      if (!result.success) {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      alert("Something went wrong. Please try again or contact us directly.");
+    }
   };
 
   return (

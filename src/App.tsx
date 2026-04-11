@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import Quality from './pages/Quality';
 import B2B from './pages/B2B';
 import Contact from './pages/Contact';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/b2b" element={<B2B />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <WhatsAppButton />
       </Layout>
     </>
   );

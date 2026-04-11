@@ -33,9 +33,29 @@ const B2B = () => {
   });
 
   const onSubmit = async (data: B2BFormData) => {
-    // Simulate API call
-    console.log(data);
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "13929ac0-3251-466b-9c2d-59a5851c3e57",
+          ...data,
+          from_name: "Bluva Website (B2B Form)",
+          subject: `New B2B Inquiry from ${data.companyName}`
+        }),
+      });
+
+      const result = await response.json();
+      if (!result.success) {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      alert("Something went wrong. Please try again or contact us directly.");
+    }
   };
 
   return (
