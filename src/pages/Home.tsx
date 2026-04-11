@@ -31,6 +31,11 @@ const features = [
   { icon: Leaf, title: 'Eco-Friendly', description: 'Responsible initiatives including plantation drives and clean-city efforts.' },
   { icon: Award, title: 'Hygienic Packaging', description: 'State-of-the-art packaging with a focus on hygiene and sustainability.' },
 ];
+const founders = [
+  { id: 'rishika', name: 'Rishika Goel', role: 'Co-Founder', init: 'RG', accent: '#00B4D8', tagline: 'Because design should be democratic.' },
+  { id: 'shradha', name: 'Shradha', role: 'Co-Founder', init: 'S', accent: '#0077B6', tagline: 'Because water has always been more than water.' },
+  { id: 'dhruv', name: 'Dhruv', role: 'Co-Founder', init: 'D', accent: '#023E8A', tagline: 'Because ordinary doesn\'t have to be forgettable.' },
+];
 
 const Home = () => {
   return (
@@ -111,21 +116,56 @@ const Home = () => {
       {/* Founder Teaser */}
       <section className="bg-navy-base py-32">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl italic font-editorial mb-8">Meet the Team</h2>
+          <div className="text-center mb-16 space-y-4">
+            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-brand-blue">The Visionaries</p>
+            <h2 className="text-5xl md:text-7xl italic font-editorial">Meet the Team</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[1, 2, 3].map((i) => (
+            {founders.map((founder) => (
               <motion.div
-                key={i}
-                whileHover={{ rotateY: 5, rotateX: 5 }}
-                className="glass-card p-10 text-center space-y-4 border-slate-200"
+                key={founder.id}
+                whileHover={{ y: -8 }}
+                className="glass-card p-10 text-center space-y-6 border-slate-200 transition-all duration-300 relative group overflow-hidden"
+                style={{ borderTop: `3px solid ${founder.accent}` }}
               >
-                <div className="w-32 h-32 rounded-full bg-white shadow-sm mx-auto mb-6 flex items-center justify-center border border-slate-200">
-                  <span className="text-2xl font-bold text-slate-400">Founder {i}</span>
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                  style={{ backgroundColor: founder.accent }}
+                />
+                
+                <div 
+                  className="w-32 h-32 rounded-full mx-auto relative flex items-center justify-center bg-white shadow-sm"
+                  style={{ border: `1px solid ${founder.accent}33` }}
+                >
+                  <div className="absolute inset-0 rounded-full blur-xl opacity-20" style={{ backgroundColor: founder.accent }} />
+                  <span 
+                    className="relative text-4xl font-editorial font-bold z-10"
+                    style={{ color: founder.accent }}
+                  >
+                    {founder.init}
+                  </span>
                 </div>
-                <h3 className="text-2xl font-editorial">Co-Founder</h3>
-                <p className="text-slate-400 text-sm">Visionary entrepreneur dedicated to purity and hydration.</p>
+                
+                <div className="space-y-2 relative z-10">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: founder.accent }}>
+                    {founder.role}
+                  </p>
+                  <h3 className="text-3xl font-editorial font-bold text-slate-900">{founder.name}</h3>
+                </div>
+                
+                <p className="text-slate-600 font-editorial italic text-lg leading-relaxed relative z-10">
+                  "{founder.tagline}"
+                </p>
+                
+                <div className="pt-6 relative z-10">
+                  <Link 
+                    to="/about" 
+                    className="inline-block text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:tracking-[0.3em]"
+                    style={{ color: founder.accent }}
+                  >
+                    Read Story
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
