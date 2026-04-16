@@ -106,8 +106,7 @@
 /* --- GSAP SPECIFIC FIXES --- */
 
 /* 1. Force the Pinned Sections to stay ABOVE the background */
-#quality-horizontal-container,
-.manufacturing-timeline-section {
+#quality-horizontal-container {
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -122,8 +121,7 @@
     }
 
 /* 2. MAGIC SAUCE: Max-Content forces the track to be wider than the screen */
-#quality-horizontal-track,
-.manufacturing-horizontal-track {
+#quality-horizontal-track {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;

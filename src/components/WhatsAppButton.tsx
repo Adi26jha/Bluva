@@ -18,7 +18,7 @@ const WhatsAppButton = () => {
     return "Hi! I wanted to know more about Bluva.";
   };
 
-  const phoneNumber = '919773838578';
+  const phoneNumber = '919811727224';
   const text = encodeURIComponent(getMessage(location.pathname));
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
 

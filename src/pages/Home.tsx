@@ -180,7 +180,7 @@ const Home = () => {
               <Phone className="text-brand-blue" size={24} />
               <div className="space-y-1">
                 <p className="text-xs uppercase tracking-widest text-slate-400">Call Us</p>
-                <p className="text-sm">+91 9773838578</p>
+                <p className="text-sm">+91 9811727224</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
