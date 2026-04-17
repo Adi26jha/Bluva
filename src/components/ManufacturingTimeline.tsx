@@ -125,43 +125,43 @@ const ManufacturingTimeline = () => {
             const isTop = idx % 2 === 0;
 
             return (
-              <div key={idx} className="process-node relative w-[85vw] md:w-[45vw] shrink-0 h-full flex flex-col justify-center px-10 md:px-20 z-30">
+              <div key={idx} className="process-node relative w-[85vw] md:w-[50vw] lg:w-[40vw] xl:w-[35vw] shrink-0 h-full flex flex-col justify-center px-6 md:px-12 z-30">
                 
                 {/* Upper Section */}
-                <div className={`flex-1 flex flex-col justify-end pb-12 ${isTop ? '' : 'hidden'}`}>
-                  <div className="process-card bg-white border border-slate-200 shadow-sm rounded-2xl p-8 relative hover:shadow-xl hover:border-slate-300 transition-all duration-500">
-                    <span className="absolute -top-6 right-6 text-7xl font-editorial font-bold opacity-[0.03] select-none">{`0${idx + 1}`}</span>
-                    <div className="flex items-center gap-5 mb-4 relative z-10">
-                      <div className="w-12 h-12 rounded-full border flex items-center justify-center bg-slate-50" style={{ borderColor: `${item.color}30` }}>
-                        <item.icon size={20} style={{ color: item.color }} />
+                <div className={`flex-1 min-h-0 flex flex-col justify-end pb-6 xl:pb-12 ${isTop ? '' : 'hidden'}`}>
+                  <div className="process-card bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm rounded-xl xl:rounded-2xl p-5 lg:p-6 xl:p-8 relative hover:shadow-xl hover:border-slate-300 transition-all duration-500 overflow-hidden">
+                    <span className="absolute -top-4 right-6 text-6xl xl:text-7xl font-editorial font-bold opacity-[0.03] select-none">{`0${idx + 1}`}</span>
+                    <div className="flex items-center gap-4 mb-3 xl:mb-4 relative z-10">
+                      <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full border flex items-center justify-center bg-slate-50 shrink-0" style={{ borderColor: `${item.color}30` }}>
+                        <item.icon className="w-4 h-4 xl:w-5 xl:h-5" style={{ color: item.color }} />
                       </div>
-                      <h3 className="text-2xl font-editorial font-bold text-slate-800">{item.title}</h3>
+                      <h3 className="text-xl xl:text-2xl font-editorial font-bold text-slate-800 leading-tight">{item.title}</h3>
                     </div>
-                    <p className="text-slate-500 text-sm leading-relaxed relative z-10">{item.desc}</p>
+                    <p className="text-slate-500 text-xs xl:text-sm leading-relaxed relative z-10">{item.desc}</p>
                   </div>
                   {/* Connecting Line Down to Node */}
-                  <div className="connecting-line w-px h-12 bg-slate-300 mx-auto mt-4 origin-bottom" />
+                  <div className="connecting-line w-px h-6 xl:h-12 bg-slate-300 mx-auto mt-2 xl:mt-4 origin-bottom" />
                 </div>
 
                 {/* The Node on the Pipe */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-4 border-white bg-slate-200 z-30 flex items-center justify-center shadow-sm">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 xl:w-6 xl:h-6 rounded-full border-[3px] xl:border-4 border-white bg-slate-200 z-30 flex items-center justify-center shadow-sm">
                    {/* Inner active dot that lights up when GSAP opacity animation hits */}
-                   <div className="w-2 h-2 rounded-full opacity-100" style={{ backgroundColor: item.color }} />
+                   <div className="w-1.5 h-1.5 xl:w-2 xl:h-2 rounded-full opacity-100" style={{ backgroundColor: item.color }} />
                 </div>
 
                 {/* Lower Section */}
-                <div className={`flex-1 flex flex-col justify-start pt-12 ${!isTop ? '' : 'hidden'}`}>
+                <div className={`flex-1 min-h-0 flex flex-col justify-start pt-6 xl:pt-12 ${!isTop ? '' : 'hidden'}`}>
                   {/* Connecting Line Up to Node */}
-                  <div className="connecting-line w-px h-12 bg-slate-300 mx-auto mb-4 origin-top" />
-                  <div className="process-card bg-white border border-slate-200 shadow-sm rounded-2xl p-8 relative hover:shadow-xl hover:border-slate-300 transition-all duration-500">
-                    <span className="absolute -bottom-4 right-6 text-7xl font-editorial font-bold opacity-[0.03] select-none">{`0${idx + 1}`}</span>
-                    <div className="flex items-center gap-5 mb-4 relative z-10">
-                      <div className="w-12 h-12 rounded-full border flex items-center justify-center bg-slate-50" style={{ borderColor: `${item.color}30` }}>
-                        <item.icon size={20} style={{ color: item.color }} />
+                  <div className="connecting-line w-px h-6 xl:h-12 bg-slate-300 mx-auto mb-2 xl:mb-4 origin-top" />
+                  <div className="process-card bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm rounded-xl xl:rounded-2xl p-5 lg:p-6 xl:p-8 relative hover:shadow-xl hover:border-slate-300 transition-all duration-500 overflow-hidden">
+                    <span className="absolute -bottom-2 right-6 text-6xl xl:text-7xl font-editorial font-bold opacity-[0.03] select-none">{`0${idx + 1}`}</span>
+                    <div className="flex items-center gap-4 mb-3 xl:mb-4 relative z-10">
+                      <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full border flex items-center justify-center bg-slate-50 shrink-0" style={{ borderColor: `${item.color}30` }}>
+                        <item.icon className="w-4 h-4 xl:w-5 xl:h-5" style={{ color: item.color }} />
                       </div>
-                      <h3 className="text-2xl font-editorial font-bold text-slate-800">{item.title}</h3>
+                      <h3 className="text-xl xl:text-2xl font-editorial font-bold text-slate-800 leading-tight">{item.title}</h3>
                     </div>
-                    <p className="text-slate-500 text-sm leading-relaxed relative z-10">{item.desc}</p>
+                    <p className="text-slate-500 text-xs xl:text-sm leading-relaxed relative z-10">{item.desc}</p>
                   </div>
                 </div>
 
