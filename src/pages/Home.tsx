@@ -31,10 +31,14 @@ const features = [
   { icon: Leaf, title: 'Eco-Friendly', description: 'Responsible initiatives including plantation drives and clean-city efforts.' },
   { icon: Award, title: 'Hygienic Packaging', description: 'State-of-the-art packaging with a focus on hygiene and sustainability.' },
 ];
+import dhruvImg from '../assets/dhruv_founder.jpeg';
+import rishikaImg from '../assets/rishika_founder.PNG';
+import shradhaImg from '../assets/shradha_founder.jpeg';
+
 const founders = [
-  { id: 'rishika', name: 'Rishika Goel', role: 'Co-Founder', init: 'RG', accent: '#00B4D8', tagline: 'Because design should be democratic.' },
-  { id: 'shradha', name: 'Shradha', role: 'Co-Founder', init: 'S', accent: '#0077B6', tagline: 'Because water has always been more than water.' },
-  { id: 'dhruv', name: 'Dhruv', role: 'Co-Founder', init: 'D', accent: '#023E8A', tagline: 'Because ordinary doesn\'t have to be forgettable.' },
+  { id: 'rishika', name: 'Rishika Goel', role: 'Co-Founder', image: rishikaImg, accent: '#00B4D8', tagline: 'Because design should be democratic.' },
+  { id: 'shradha', name: 'Shradha', role: 'Co-Founder', image: shradhaImg, accent: '#0077B6', tagline: 'Because water has always been more than water.' },
+  { id: 'dhruv', name: 'Dhruv', role: 'Co-Founder', image: dhruvImg, accent: '#023E8A', tagline: 'Because ordinary doesn\'t have to be forgettable.' },
 ];
 
 const Home = () => {
@@ -134,16 +138,14 @@ const Home = () => {
                 />
                 
                 <div 
-                  className="w-32 h-32 rounded-full mx-auto relative flex items-center justify-center bg-white shadow-sm"
+                  className="w-32 h-32 rounded-full mx-auto relative flex items-center justify-center bg-white shadow-sm overflow-hidden"
                   style={{ border: `1px solid ${founder.accent}33` }}
                 >
-                  <div className="absolute inset-0 rounded-full blur-xl opacity-20" style={{ backgroundColor: founder.accent }} />
-                  <span 
-                    className="relative text-4xl font-editorial font-bold z-10"
-                    style={{ color: founder.accent }}
-                  >
-                    {founder.init}
-                  </span>
+                  <img 
+                    src={founder.image} 
+                    alt={founder.name} 
+                    className="relative z-10 w-full h-full object-cover" 
+                  />
                 </div>
                 
                 <div className="space-y-2 relative z-10">

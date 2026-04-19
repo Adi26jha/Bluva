@@ -3,13 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Target, Eye, Quote, ChevronDown } from 'lucide-react';
 
-// ─── Founder Data ────────────────────────────────────────────────────────────
+import dhruvImg from '../assets/dhruv_founder.jpeg';
+import rishikaImg from '../assets/rishika_founder.PNG';
+import shradhaImg from '../assets/shradha_founder.jpeg';
 
 const founders = [
   {
     id: 'rishika',
     name: 'Rishika Goel',
     role: 'Co-Founder',
+    image: rishikaImg,
     accent: '#00B4D8',
     tagline: 'Because design should be democratic.',
     signature: '"Something used every day should never feel forgettable."',
@@ -34,6 +37,7 @@ Bluva exists to turn the most consumed product in the world into the most consci
     id: 'shradha',
     name: 'Shradha',
     role: 'Co-Founder',
+    image: shradhaImg,
     accent: '#0077B6',
     tagline: 'Because water has always been more than water.',
     signature: '"Water isn\'t just something you consume — it\'s something you experience."',
@@ -56,6 +60,7 @@ For me, Bluva is not just a business. It's a reflection of a lifelong relationsh
     id: 'dhruv',
     name: 'Dhruv',
     role: 'Co-Founder',
+    image: dhruvImg,
     accent: '#023E8A',
     tagline: 'Because ordinary doesn\'t have to be forgettable.',
     signature: '"I didn\'t just start a company. I escaped becoming something I didn\'t want to be."',
@@ -131,21 +136,29 @@ const FounderCard = ({
             className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-card flex items-end"
             style={{ borderColor: `${founder.accent}22` }}
           >
-            {/* Placeholder — replace src with real photo */}
-            <div
-              className="absolute inset-0 flex items-center justify-center"
-              style={{ background: `linear-gradient(135deg, ${founder.accent}10, ${founder.accent}30)` }}
-            >
-              <span
-                className="text-[7rem] font-editorial font-bold leading-none select-none"
-                style={{ color: `${founder.accent}25` }}
+            {/* Render actual photo or placeholder */}
+            {founder.image ? (
+              <img 
+                src={founder.image} 
+                alt={founder.name} 
+                className="absolute inset-0 w-full h-full object-cover" 
+              />
+            ) : (
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ background: `linear-gradient(135deg, ${founder.accent}10, ${founder.accent}30)` }}
               >
-                {founder.name
-                  .split(' ')
-                  .map((n) => n[0])
-                  .join('')}
-              </span>
-            </div>
+                <span
+                  className="text-[7rem] font-editorial font-bold leading-none select-none"
+                  style={{ color: `${founder.accent}25` }}
+                >
+                  {founder.name
+                    .split(' ')
+                    .map((n) => n[0])
+                    .join('')}
+                </span>
+              </div>
+            )}
 
             {/* Bottom name strip */}
             <div className="relative z-10 w-full p-6 bg-gradient-to-t from-white/80 to-transparent backdrop-blur-sm">

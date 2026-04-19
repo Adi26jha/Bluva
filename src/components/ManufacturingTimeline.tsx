@@ -59,7 +59,7 @@ const ManufacturingTimeline = () => {
 
       // 3. Parallax Ghost Background Text
       gsap.to(bgText, {
-        x: () => -(bgText.scrollWidth - window.innerWidth) * 0.4, // Move slower than track
+        x: () => -(bgText.scrollWidth - window.innerWidth), // Allow full traversal
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -99,8 +99,8 @@ const ManufacturingTimeline = () => {
       
       {/* Editorial Ghost Text Background */}
       <div className="absolute top-0 left-0 w-full h-full flex items-center pt-20 pointer-events-none z-0 overflow-hidden">
-        <h2 ref={bgTextRef} className="text-[18vw] font-editorial font-bold text-slate-900 opacity-[0.015] whitespace-nowrap pl-[10vw]">
-          ENGINEERED PURITY <span className="italic pl-16">ENGINEERED PURITY</span>
+        <h2 ref={bgTextRef} className="text-[18vw] font-editorial font-bold text-slate-900 opacity-[0.035] whitespace-nowrap pl-[10vw]">
+          ENGINEERED PURITY
         </h2>
       </div>
 
