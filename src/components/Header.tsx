@@ -28,11 +28,13 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-navy-base/80 backdrop-blur-lg py-4 border-b border-slate-200' : 'bg-transparent py-6'
+      className={`fixed left-1/2 -translate-x-1/2 w-[92%] lg:w-[96%] max-w-7xl z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'top-4 bg-white/75 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_rgba(0,30,80,0.06)] rounded-[2rem] py-2 md:py-3' 
+          : 'top-6 md:top-8 bg-transparent border border-transparent py-4'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="w-full px-6 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="block group cursor-pointer py-1">
           <div className="h-8 md:h-10 flex items-center justify-start transition-opacity group-hover:opacity-80">
@@ -86,10 +88,10 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-navy-base border-b border-slate-200 py-8 px-6 md:hidden flex flex-col gap-6 items-center"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            className="absolute top-full left-0 w-full mt-4 bg-white/90 backdrop-blur-2xl border border-white/60 shadow-2xl rounded-3xl py-8 px-6 md:hidden flex flex-col gap-6 items-center"
           >
             {navLinks.map((link) => (
               <Link
