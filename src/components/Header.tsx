@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Droplets } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/cropped_logo-removebg-preview.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -33,12 +34,14 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <Droplets className="w-8 h-8 text-brand-blue transition-transform duration-500 group-hover:rotate-12" />
-            <div className="absolute inset-0 bg-brand-blue/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <Link to="/" className="block group cursor-pointer py-1">
+          <div className="h-8 md:h-10 flex items-center justify-start transition-opacity group-hover:opacity-80">
+             <img 
+              src={logoImg} 
+              alt="Bluva" 
+              className="w-auto h-full object-contain" 
+            />
           </div>
-          <span className="text-2xl font-editorial font-bold tracking-wider text-slate-900">BLUVA</span>
         </Link>
 
         {/* Desktop Nav */}

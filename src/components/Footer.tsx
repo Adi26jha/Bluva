@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Droplets, Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import logoImg from '../assets/cropped_logo-removebg-preview.png';
 
 const Footer = () => {
   return (
@@ -21,9 +22,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Col */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2 group w-fit">
-              <Droplets className="w-8 h-8 text-brand-blue" />
-              <span className="text-2xl font-editorial font-bold tracking-wider text-slate-900">BLUVA</span>
+            <Link to="/" className="block group w-fit cursor-pointer">
+              <div className="h-10 md:h-12 flex items-center justify-start transition-opacity group-hover:opacity-80">
+                <img 
+                  src={logoImg} 
+                  alt="Bluva" 
+                  className="w-auto h-full object-contain" 
+                />
+              </div>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
               Premium packaged drinking water crafted with purity and conscious intent. Let's Hydrate, Let's BLUVA.
