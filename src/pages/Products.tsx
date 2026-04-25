@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 
+import bottle250Img from '../assets/250ml_bottle.png';
+import bottle500Img from '../assets/500ml_bottle.png';
+import bottle1000Img from '../assets/1000ml_bottle.png';
+
 const products = [
   {
     id: '250ml',
@@ -11,7 +15,7 @@ const products = [
     description: 'Our most portable option, perfect for short commutes, quick meetings, or event catering. Compact yet delivering the same pure hydration as our larger bottles.',
     benefits: ['Eco-friendly material', 'Pocket-sized convenience', '5-step purified'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=250ml'
+    image: bottle250Img
   },
   {
     id: '500ml',
@@ -21,7 +25,7 @@ const products = [
     description: 'The industry standard for a reason. Our 500ml bottle is designed for active lifestyles, fitting perfectly in car cup holders and gym bags.',
     benefits: ['Ergonomic grip', 'Optimal daily portion', 'Ozone treated'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=500ml'
+    image: bottle500Img
   },
   {
     id: '1000ml',
@@ -31,7 +35,7 @@ const products = [
     description: 'For those who take hydration seriously. The 1 Liter bottle ensures you have enough pure water to last through intense workouts or long office hours.',
     benefits: ['Value pack', 'Full day hydration', 'Recyclable PET'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=1000ml'
+    image: bottle1000Img
   },
   {
     id: 'jeera',
