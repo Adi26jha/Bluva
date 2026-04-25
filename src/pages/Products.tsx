@@ -5,6 +5,7 @@ import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 import bottle250Img from '../assets/250ml_bottle.png';
 import bottle500Img from '../assets/500ml_bottle.png';
 import bottle1000Img from '../assets/1000ml_bottle.png';
+import apnaJeeraImg from '../assets/ApnaJeera.png';
 
 const products = [
   {
@@ -22,6 +23,7 @@ const products = [
     category: 'Packaged Water',
     name: 'Packaged Drinking Water',
     size: '500ml',
+    availability: 'Coming Soon',
     description: 'The industry standard for a reason. Our 500ml bottle is designed for active lifestyles, fitting perfectly in car cup holders and gym bags.',
     benefits: ['Ergonomic grip', 'Optimal daily portion', 'Ozone treated'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
@@ -40,12 +42,12 @@ const products = [
   {
     id: 'jeera',
     category: 'Jeera Water',
-    name: 'Apna Jeera Drink',
+    name: 'APNA JEERA',
     size: '200ml',
     description: 'A refreshing traditional Indian digestif with a modern twist. Infused with natural cumin extracts and a proprietary blend of spices for that perfect kick.',
     benefits: ['Aids digestion', 'Natural extracts', 'Refreshing taste'],
     composition: { energy: '42 kcal', sugar: '10g', fat: '0g' },
-    image: 'https://placehold.co/600x1200/F8FAFC/00B4D8?text=Jeera'
+    image: apnaJeeraImg
   }
 ];
 
@@ -128,7 +130,7 @@ const Products = () => {
               <div className="w-full lg:w-1/2 space-y-8">
                 <div className="space-y-4">
                   <span className="inline-block px-3 py-1 bg-white shadow-sm border border-slate-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-blue">
-                    {product.size} Available
+                    {product.availability || `${product.size} Available`}
                   </span>
                   <h2 className="text-4xl md:text-6xl font-editorial">{product.name}</h2>
                 </div>

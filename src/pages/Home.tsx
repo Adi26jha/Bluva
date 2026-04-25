@@ -19,12 +19,13 @@ import {
 import bottle250Img from '../assets/250ml_bottle.png';
 import bottle500Img from '../assets/500ml_bottle.png';
 import bottle1000Img from '../assets/1000ml_bottle.png';
+import apnaJeeraImg from '../assets/ApnaJeera.png';
 
 const products = [
   { id: '250ml', name: 'Packaged Water', size: '250ml', description: 'Perfect for events and quick hydration.', image: bottle250Img },
   { id: '500ml', name: 'Packaged Water', size: '500ml', description: 'The ideal companion for your daily move.', image: bottle500Img },
   { id: '1000ml', name: 'Packaged Water', size: '1000ml', description: 'Stay hydrated all day with our liter bottle.', image: bottle1000Img },
-  { id: 'jeera', name: 'Jeera Water', size: '200ml', description: 'Refreshing traditional digestif with a twist.', image: 'https://placehold.co/400x800/F8FAFC/00B4D8?text=Jeera' },
+  { id: 'jeera', name: 'APNA JEERA', size: '200ml', description: 'Refreshing traditional digestif with a twist.', image: apnaJeeraImg },
 ];
 
 const features = [

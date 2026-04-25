@@ -161,7 +161,7 @@ const FounderCard = ({
             )}
 
             {/* Bottom name strip */}
-            <div className="relative z-10 w-full p-6 bg-gradient-to-t from-white/80 to-transparent backdrop-blur-sm">
+            <div className="relative z-10 w-full p-6 pt-20 bg-gradient-to-t from-white via-white/90 to-transparent">
               <p
                 className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
                 style={{ color: founder.accent }}
