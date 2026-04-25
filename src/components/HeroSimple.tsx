@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import LiquidEther from './LiquidEther';
+import logoImg from '../assets/cropped_logo-removebg-preview.png';
 
 const HeroSimple = () => {
   return (
@@ -33,13 +34,22 @@ const HeroSimple = () => {
           transition={{ duration: 1, ease: 'easeOut' }}
           className="space-y-8"
         >
-          {/* Logo/Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,180,216,0.3)]">
-              <svg className="w-10 h-10 text-navy-base" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.5c-4.1 0-7.5-3.4-7.5-7.5 0-3.5 4.5-9.8 6.4-12.2.4-.6 1.3-.6 1.7 0 2 2.5 6.4 8.7 6.4 12.2 0 4.1-3.4 7.5-7.5 7.5z"/>
-              </svg>
-            </div>
+          {/* Living Status Pill */}
+          <div className="flex justify-center mb-10">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0, y: 10 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-white/50 shadow-sm cursor-default hover:bg-white/60 transition-colors"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue" />
+              </span>
+              <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-slate-700">
+                100% Pure & Conscious
+              </span>
+            </motion.div>
           </div>
 
           <h1 className="text-5xl md:text-9xl font-editorial font-bold text-slate-900 tracking-widest leading-tight">
