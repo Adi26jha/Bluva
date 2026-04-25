@@ -35,14 +35,13 @@ const Footer = () => {
               Premium packaged drinking water crafted with purity and conscious intent. Let's Hydrate, Let's BLUVA.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors border border-slate-200 group">
+              <a 
+                href="https://www.instagram.com/bluva_in?igsh=aG5zc3llbnJubHJp&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors border border-slate-200 group"
+              >
                 <Instagram size={18} className="group-hover:text-brand-blue transition-colors" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors border border-slate-200 group">
-                <Facebook size={18} className="group-hover:text-brand-blue transition-colors" />
-              </a>
-              <a href="mailto:bluvapackagedwater@gmail.com" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors border border-slate-200 group">
-                <Mail size={18} className="group-hover:text-brand-blue transition-colors" />
               </a>
             </div>
           </div>
