@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import LiquidEther from './LiquidEther';
-import logoImg from '../assets/cropped_logo-removebg-preview.png';
 
 const HeroSimple = () => {
   return (
