@@ -2,7 +2,7 @@ import { useRef, useLayoutEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Zap, ShieldCheck, Filter, Droplet, CheckCircle, ArrowRight, Play, Volume2, VolumeX } from 'lucide-react';
+import { Zap, ShieldCheck, Filter, Droplet, CheckCircle, ArrowRight, Volume2, VolumeX } from 'lucide-react';
 
 import video1 from '../assets/C3098 (1).mp4';
 import video2 from '../assets/C3122 (online-video-cutter.com).mp4';
@@ -18,7 +18,7 @@ const processSteps = [
   { number: "05", title: "UV Sterilization", desc: "Final bacterial protection using high-intensity ultraviolet irradiation.", icon: CheckCircle }
 ];
 
-const ReviewVideoCard = ({ videoSrc, name, quote, delay }: { videoSrc: string, name: string, quote: string, delay: number }) => {
+const ReviewVideoCard = ({ videoSrc, name, delay }: { videoSrc: string, name: string, delay: number }) => {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -219,19 +219,16 @@ const Quality = () => {
           <ReviewVideoCard 
             videoSrc={video1} 
             name="Verified Review" 
-            quote="The purest, lightest water I've ever tasted. It's completely different." 
             delay={0.1} 
           />
           <ReviewVideoCard 
             videoSrc={video2} 
             name="Verified Review" 
-            quote="You can actually taste the quality. I didn't know water could be this smooth." 
             delay={0.3} 
           />
           <ReviewVideoCard 
             videoSrc={video3} 
             name="Verified Review" 
-            quote="Absolutely incredible. It feels completely refreshing and perfectly balanced." 
             delay={0.5} 
           />
         </div>
