@@ -27,7 +27,7 @@ const products = [
     description: 'The industry standard for a reason. Our 500ml bottle is designed for active lifestyles, fitting perfectly in car cup holders and gym bags.',
     benefits: ['Ergonomic grip', 'Optimal daily portion', 'Ozone treated'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: bottle500Img
+    image: undefined
   },
   {
     id: '1000ml',
@@ -118,11 +118,17 @@ const Products = () => {
                   transition={{ type: "spring", damping: 15 }}
                   className="relative z-10 aspect-[3/4] max-h-[600px] flex items-center justify-center"
                 >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,180,216,0.3)] hover:scale-105 transition-transform duration-700"
-                  />
+                  {product.image ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-full w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,180,216,0.3)] hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-3/4 h-3/4 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center bg-white/50 backdrop-blur-sm group-hover:border-brand-blue/30 transition-colors">
+                      <span className="text-slate-400 font-bold tracking-[0.3em] uppercase text-sm">Coming Soon</span>
+                    </div>
+                  )}
                 </motion.div>
               </div>
 

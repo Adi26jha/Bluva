@@ -5,7 +5,7 @@ interface ProductCardProps {
   id: string;
   name: string;
   size: string;
-  image: string;
+  image?: string;
   description: string;
 }
 
@@ -19,13 +19,19 @@ const ProductCard = ({ id, name, size, image, description }: ProductCardProps) =
       <div className="absolute inset-0 bg-brand-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       {/* Product Image Placeholder */}
-      <div className="relative h-64 mb-6 flex items-center justify-center">
+      <div className="relative h-64 mb-6 flex items-center justify-center p-4">
         <div className="absolute inset-0 bg-brand-blue/10 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700" />
-        <img
-          src={image}
-          alt={name}
-          className="relative z-10 h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={name}
+            className="relative z-10 h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="relative z-10 w-full h-full border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center bg-white/50 backdrop-blur-sm group-hover:border-brand-blue/30 transition-colors">
+            <span className="text-slate-400 font-bold tracking-[0.3em] uppercase text-xs">Coming Soon</span>
+          </div>
+        )}
       </div>
 
       <div className="mt-auto space-y-2">

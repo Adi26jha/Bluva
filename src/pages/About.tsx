@@ -437,7 +437,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto space-y-12">
             {[
               { year: '2024', title: 'The Inception', desc: 'Three friends unite with a vision to redefine packaged water.' },
-              { year: '2024 Q3', title: 'Production Begins', desc: 'First 500ml batch leaves our state-of-the-art facility.' },
+              { year: '2024 Q3', title: 'Production Begins', desc: 'First 250ml batch leaves our state-of-the-art facility.' },
               { year: '2025', title: 'Expanding Purity', desc: 'Introduction of Jeera Water and larger pack sizes.' },
             ].map((step, idx) => (
               <motion.div
