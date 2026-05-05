@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 
 import bottle250Img from '../assets/250ml_bottle.png';
-import bottle500Img from '../assets/500ml_bottle.png';
 import bottle1000Img from '../assets/1000ml_bottle.png';
 import apnaJeeraImg from '../assets/ApnaJeera.png';
 
