@@ -113,15 +113,15 @@ const Quality = () => {
       </section>
 
       {/* 3. Certifications Section */}
-      <section className="py-60 bg-navy-base border-t border-slate-200">
+      <section className="section-deep-blue py-60 border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/3">
-              <h2 className="text-5xl md:text-6xl font-editorial italic mb-8 leading-tight text-slate-900">Certified <br />Excellence.</h2>
+              <h2 className="text-5xl md:text-6xl font-editorial italic mb-8 leading-tight text-white">Certified <br />Excellence.</h2>
               <p className="text-slate-500 leading-relaxed mb-10 text-lg">
                 Our plant undergoes rigorous hourly testing to maintain international benchmarks of quality and safety.
               </p>
-              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue font-bold tracking-[0.2em] text-xs uppercase">
+              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/30 bg-white/10 text-white font-bold tracking-[0.2em] text-xs uppercase">
                 <ShieldCheck size={20} /> ISI IS 14543:2004
               </div>
             </div>
@@ -137,13 +137,13 @@ const Quality = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-10 border border-slate-200 hover:border-brand-blue/20 transition-all duration-500 rounded-[2.5rem] bg-white shadow-sm group"
+                  className="p-10 border border-white/15 hover:border-white/30 transition-all duration-500 rounded-[2.5rem] bg-white/10 backdrop-blur-sm group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center mb-6 group-hover:bg-brand-blue/10 transition-colors">
-                    <cert.icon className="text-brand-blue" size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-6 group-hover:bg-white/25 transition-colors">
+                    <cert.icon className="text-white" size={24} />
                   </div>
-                  <h4 className="text-2xl font-editorial mb-4 text-slate-900">{cert.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{cert.desc}</p>
+                  <h4 className="text-2xl font-editorial mb-4 text-white">{cert.title}</h4>
+                  <p className="text-white/70 text-sm leading-relaxed">{cert.desc}</p>
                 </motion.div>
               ))}
             </div>

@@ -161,3 +161,78 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ── 80/20 Theme Classes ── */
+.section-deep-blue {
+  background-color: #0A4FA3 !important;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+/* Headings become white on deep blue backgrounds */
+.section-deep-blue h1,
+.section-deep-blue h2,
+.section-deep-blue h3,
+.section-deep-blue h4,
+.section-deep-blue h5,
+.section-deep-blue h6 {
+  color: white !important;
+}
+
+/* Body text becomes readable white */
+.section-deep-blue p,
+.section-deep-blue li,
+.section-deep-blue label {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Small labels / uppercase tracking text */
+.section-deep-blue .text-slate-400,
+.section-deep-blue .text-slate-500,
+.section-deep-blue .text-slate-600,
+.section-deep-blue .text-slate-700 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Icons that were brand-blue become white */
+.section-deep-blue .text-brand-blue {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Glass cards on deep blue get a frosted overlay look */
+.section-deep-blue .glass-card,
+.section-deep-blue .glass-card-dark {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Text INSIDE glass cards on deep blue stays white */
+.section-deep-blue .glass-card h3,
+.section-deep-blue .glass-card h4,
+.section-deep-blue .glass-card p,
+.section-deep-blue .glass-card-dark h3,
+.section-deep-blue .glass-card-dark p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Borders become subtly white */
+.section-deep-blue .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Invert Buttons */
+.section-deep-blue .btn-primary {
+  background-color: white !important;
+  color: #0A4FA3 !important;
+}
+
+.section-deep-blue .btn-outline {
+  border-color: white !important;
+  color: white !important;
+  background: transparent !important;
+}
+
+.section-deep-blue .btn-outline:hover {
+  background-color: white !important;
+  color: #0A4FA3 !important;
+}

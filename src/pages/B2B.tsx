@@ -129,8 +129,9 @@ const B2B = () => {
       </section>
 
       {/* Why Partner Grid */}
-      <section className="py-32 container mx-auto px-6">
-        <div className="text-center mb-20">
+      <section className="section-deep-blue w-full py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
           <h2 className="text-5xl font-editorial italic mb-4">Partnership Benefits</h2>
           <p className="text-slate-400">Why distributors choose BLUVA</p>
         </div>
@@ -160,17 +161,18 @@ const B2B = () => {
             <motion.div
               key={i}
               whileHover={{ x: 10 }}
-              className="glass-card-dark p-12 border-slate-200 flex gap-8"
+              className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-12 flex gap-8 hover:border-white/30 transition-all duration-500"
             >
-              <div className="shrink-0 w-12 h-12 rounded bg-brand-blue/10 flex items-center justify-center">
-                <item.icon className="text-brand-blue" size={24} />
+              <div className="shrink-0 w-12 h-12 rounded bg-white/15 flex items-center justify-center">
+                <item.icon className="text-white" size={24} />
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl font-editorial">{item.title}</h3>
-                <p className="text-slate-400 leading-relaxed text-sm">{item.desc}</p>
+                <h3 className="text-2xl font-editorial text-white">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed text-sm">{item.desc}</p>
               </div>
             </motion.div>
           ))}
+          </div>
         </div>
       </section>
 

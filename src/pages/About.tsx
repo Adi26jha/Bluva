@@ -349,12 +349,12 @@ const About = () => {
       </section>
 
       {/* ── Mission & Vision ── */}
-      <section className="py-24 bg-white shadow-sm relative">
+      <section className="section-deep-blue py-24 shadow-sm relative">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div whileHover={{ y: -10 }} className="glass-card p-12 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center border border-brand-blue/20">
-                <Target className="text-brand-blue" size={32} />
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center border border-white/30">
+                <Target className="text-white" size={32} />
               </div>
               <h3 className="text-3xl font-editorial">Our Mission</h3>
               <p className="text-slate-500 leading-relaxed">
@@ -362,8 +362,8 @@ const About = () => {
               </p>
             </motion.div>
             <motion.div whileHover={{ y: -10 }} className="glass-card p-12 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-accent-cyan/10 flex items-center justify-center border border-accent-cyan/20">
-                <Eye className="text-accent-cyan" size={32} />
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center border border-white/30">
+                <Eye className="text-white" size={32} />
               </div>
               <h3 className="text-3xl font-editorial">Our Vision</h3>
               <p className="text-slate-500 leading-relaxed">
@@ -461,9 +461,9 @@ const About = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-32 bg-brand-blue/5 relative overflow-hidden">
+      <section className="section-deep-blue py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-editorial italic mb-8 text-slate-900">
+          <h2 className="text-5xl md:text-7xl font-editorial italic mb-8 text-white">
             Ready to Hydrate?
           </h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center">

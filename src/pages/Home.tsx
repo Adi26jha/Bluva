@@ -103,10 +103,10 @@ const Home = () => {
       </section>
 
       {/* Why BLUVA Section */}
-      <section className="bg-navy-base py-32 relative">
+      <section className="section-deep-blue py-32 relative">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-5xl md:text-7xl mb-6">Why <span className="text-brand-blue">BLUVA?</span></h2>
+            <h2 className="text-5xl md:text-7xl mb-6">Why <span className="text-cyan-300">BLUVA?</span></h2>
             <p className="text-slate-500">Redefining hydration through purity, innovation, and conscious intent.</p>
           </div>
           
@@ -179,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* Contact Strip */}
-      <section className="bg-navy-base py-20 border-t border-slate-200">
+      <section className="section-deep-blue py-20 border-t border-slate-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center gap-4">

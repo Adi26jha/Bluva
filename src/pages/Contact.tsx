@@ -239,11 +239,11 @@ const Contact = () => {
       </section>
 
       {/* B2B Shortcut Banner */}
-      <section className="bg-brand-blue/10 py-12">
+      <section className="section-deep-blue py-12">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
            <div className="space-y-2 text-center md:text-left">
-              <h3 className="text-3xl font-editorial">Looking to partner?</h3>
-              <p className="text-slate-400">Join our distribution network across India.</p>
+              <h3 className="text-3xl font-editorial text-white">Looking to partner?</h3>
+              <p className="text-white/70">Join our distribution network across India.</p>
            </div>
            <Link to="/b2b" className="btn-primary flex items-center gap-3">
               Use B2B Form
