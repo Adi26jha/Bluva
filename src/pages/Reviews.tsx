@@ -4,7 +4,7 @@ import { Volume2, VolumeX } from 'lucide-react';
 
 import video1 from '../assets/C3098 (1).mp4';
 import video2 from '../assets/C3122 (online-video-cutter.com).mp4';
-import video3 from '../assets/C3149 (1).MP4';
+import video3 from '../assets/C3149-1.mp4';
 
 const ReviewVideoCard = ({ videoSrc, name, delay }: { videoSrc: string, name: string, delay: number }) => {
   const [isMuted, setIsMuted] = useState(true);
