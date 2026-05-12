@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import logoImg from '../assets/cropped_logo-removebg-preview.png';
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -7,7 +9,7 @@ const LoadingScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 1.5s as requested + buffer for smoother exit
+    }, 2500); // 2.5s for a smoother, un-rushed entry
 
     return () => clearTimeout(timer);
   }, []);
@@ -16,84 +18,38 @@ const LoadingScreen = () => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 1, ease: "easeInOut" } }}
+          initial={{ opacity: 1, filter: "blur(0px)" }}
+          exit={{ opacity: 0, filter: "blur(10px)", transition: { duration: 1, ease: "easeInOut" } }}
           className="fixed inset-0 z-[100] bg-navy-base flex flex-col items-center justify-center overflow-hidden"
         >
           <div className="relative flex flex-col items-center">
-            {/* Liquid Drop Animation */}
-            <div className="relative w-24 h-48 mb-12">
-              {/* The "Tap" or Source */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-1 bg-brand-blue/20 rounded-full" />
-              
-              {/* The Falling Drop */}
-              <motion.div
-                initial={{ y: -20, scale: 0.8, opacity: 0 }}
-                animate={{ 
-                  y: [0, 180], 
-                  scale: [1, 1.2, 0.8],
-                  opacity: [0, 1, 1, 0] 
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  times: [0, 0.8, 0.9, 1],
-                  ease: "circIn" 
-                }}
-                className="absolute left-1/2 -translate-x-1/2 w-4 h-6 bg-brand-blue rounded-full shadow-[0_0_15px_rgba(0,180,216,0.5)]"
-                style={{ borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%' }}
-              />
-
-              {/* Impact Ripple */}
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: [0, 4], 
-                  opacity: [0, 0.5, 0] 
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  times: [0, 0.8, 1],
-                  ease: "easeOut" 
-                }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-4 border-2 border-brand-blue rounded-full"
-              />
-            </div>
-
-            {/* Logo Text with Liquid Disclosure */}
-            <div className="relative overflow-hidden">
-              <motion.h1
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="text-5xl md:text-7xl font-editorial font-bold text-slate-900 tracking-[0.3em] uppercase"
-              >
-                BLUVA
-              </motion.h1>
-              
-              {/* Liquid Wave Overlay passing through text */}
-              <motion.div
-                animate={{
-                  x: ["-100%", "100%"]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent skew-x-12"
-              />
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="mt-6 text-xs tracking-[1em] uppercase text-slate-900 font-body"
+            {/* Lottie Stencil Mask Logo */}
+            <motion.div 
+              className="relative w-48 h-48 mb-8"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              style={{
+                WebkitMaskImage: `url(${logoImg})`,
+                WebkitMaskSize: 'contain',
+                WebkitMaskPosition: 'center',
+                WebkitMaskRepeat: 'no-repeat',
+                maskImage: `url(${logoImg})`,
+                maskSize: 'contain',
+                maskPosition: 'center',
+                maskRepeat: 'no-repeat',
+              }}
             >
-              Pure Indulgence
-            </motion.p>
+              <DotLottieReact
+                src="https://lottie.host/a5d3fd80-93a3-412b-8ee6-11ac060cf5a8/udv1WQHENl.lottie"
+                loop
+                autoplay
+                speed={1.5}
+                className="w-full h-full object-cover scale-[3] transform origin-center" 
+              />
+            </motion.div>
+
+
           </div>
 
           {/* Background Ambient Glow */}
