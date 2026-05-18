@@ -5,6 +5,7 @@ import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 import bottle250Img from '../assets/250ml_bottle.png';
 import bottle1000Img from '../assets/1000ml_bottle.png';
 import apnaJeeraImg from '../assets/ApnaJeera.png';
+import brochurePdf from '../assets/Preview.pdf';
 
 const products = [
   {
@@ -169,10 +170,14 @@ const Products = () => {
                 </div>
 
                 <div className="pt-8 flex flex-wrap gap-6">
-                  <button className="btn-primary flex items-center gap-2">
+                  <a
+                    href={brochurePdf}
+                    download="Bluva_Brochure.pdf"
+                    className="btn-primary flex items-center gap-2"
+                  >
                     <FileText size={18} />
                     Download Brochure
-                  </button>
+                  </a>
                   <button className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-brand-blue transition-colors group">
                     Inquire for B2B
                     <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />

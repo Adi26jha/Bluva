@@ -114,14 +114,22 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex items-center gap-4 pt-4">
               <a 
                 href="https://www.instagram.com/bluva_in?igsh=aG5zc3llbnJubHJp&utm_source=qr" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue/10 transition-colors"
+                className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue/10 transition-colors shrink-0"
               >
                 <Instagram size={20} className="text-slate-600 hover:text-brand-blue transition-colors" />
+              </a>
+              <a
+                href="https://www.instagram.com/bluva_in?igsh=aG5zc3llbnJubHJp&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-500 hover:text-brand-blue transition-colors font-medium"
+              >
+                @bluva_in
               </a>
             </div>
           </motion.div>
