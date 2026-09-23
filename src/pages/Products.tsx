@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, FileText, ChevronRight } from 'lucide-react';
 
-import bottle250Img from '../assets/250ml_bottle.png';
-import bottle1000Img from '../assets/1000ml_bottle.png';
+import bottle250Img from '../assets/250ml_bottle.jpg';
+import bottle500Img from '../assets/500ml_bottle.jpg';
+import bottle1000Img from '../assets/1000ml_bottle.jpg';
 import apnaJeeraImg from '../assets/ApnaJeera.png';
 import brochurePdf from '../assets/Preview.pdf';
 
@@ -23,11 +24,10 @@ const products = [
     category: 'Packaged Water',
     name: 'Packaged Drinking Water',
     size: '500ml',
-    availability: 'Coming Soon',
     description: 'The industry standard for a reason. Our 500ml bottle is designed for active lifestyles, fitting perfectly in car cup holders and gym bags.',
     benefits: ['Ergonomic grip', 'Optimal daily portion', 'Ozone treated'],
     composition: { ph: '7.2 - 7.6', tds: '< 50 ppm', minerals: 'Added' },
-    image: undefined
+    image: bottle500Img
   },
   {
     id: '1000ml',
