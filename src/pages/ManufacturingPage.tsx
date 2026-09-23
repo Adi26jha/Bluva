@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Factory, Package, MapPin, BadgeCheck } from 'lucide-react';
 import logoImg from '../assets/cropped_logo-removebg-preview.png';
@@ -22,7 +22,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' },
+    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' as const },
   }),
 };
 
