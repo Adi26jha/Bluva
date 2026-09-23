@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Factory, Package2, MapPin, BadgeCheck, ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -185,7 +185,8 @@ const ManufacturingPage = ({ data }: { data: ManufacturingData }) => {
             </p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 bg-white text-brand-blue font-bold text-sm px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-white font-bold text-sm px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              style={{ color: '#023E8A' }}
             >
               Explore BLUVA
               <ArrowRight size={16} />
