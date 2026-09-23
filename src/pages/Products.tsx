@@ -48,6 +48,17 @@ const products = [
     benefits: ['Aids digestion', 'Natural extracts', 'Refreshing taste'],
     composition: { energy: '42 kcal', sugar: '10g', fat: '0g' },
     image: apnaJeeraImg
+  },
+  {
+    id: 'soda',
+    category: 'Soda',
+    name: 'BLUVA Soda',
+    size: 'Coming Soon',
+    availability: 'Coming Soon',
+    description: 'Our latest venture into carbonated refreshment. A crisp, clean soda crafted with the same BLUVA commitment to purity — launching soon.',
+    benefits: ['Crisp carbonation', 'Clean taste', 'BLUVA purity'],
+    composition: { type: 'Carbonated', fssai: 'Certified', origin: 'India' },
+    image: undefined
   }
 ];
 
@@ -77,7 +88,7 @@ const Products = () => {
       {/* Sticky Sub-nav */}
       <nav className="sticky top-20 z-40 bg-navy-base/80 backdrop-blur-xl border-y border-slate-200 py-4">
         <div className="container mx-auto px-6 flex justify-center gap-4 md:gap-12">
-          {['All', 'Packaged Water', 'Jeera Water'].map((filter) => (
+          {['All', 'Packaged Water', 'Jeera Water', 'Soda'].map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
