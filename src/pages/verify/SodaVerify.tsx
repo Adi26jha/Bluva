@@ -7,8 +7,6 @@ const SECRET_TOKEN = 's6p3k8m2t5w9r7q4';
 const data: ManufacturingData = {
   productName: 'BLUVA Soda',
   productCategory: 'Carbonated Soft Drink',
-  productSize: 'As marked on bottle',
-  accentColor: '#E63946',
   manufacturerName: 'Flake Food & Beverages',
   manufacturerAddress: '837, Opp. Huda Market, Sector-38, Gurugram - 122001 (HR), India',
   fssaiLicNo: '10013063000290',

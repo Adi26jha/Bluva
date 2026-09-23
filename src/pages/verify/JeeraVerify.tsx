@@ -7,8 +7,6 @@ const SECRET_TOKEN = 'j4t7q2r9m5k1n8p6';
 const data: ManufacturingData = {
   productName: 'BLUVA Apna Jeera',
   productCategory: 'Jeera Water',
-  productSize: '200ml',
-  accentColor: '#F4A300',
   manufacturerName: 'Satguru Enterprises',
   manufacturerAddress: 'G-463, 464, 465, 466, 494 & 495, UPSIDC Indl. Area, Phase-II, MG Road, Tehsil Dhaulana, Distt. Hapur - 201015 (U.P.), India',
   fssaiLicNo: '10012051000104',

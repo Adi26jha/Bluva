@@ -7,8 +7,6 @@ const SECRET_TOKEN = 'w8k2m9p4q7r3b1n5';
 const data: ManufacturingData = {
   productName: 'BLUVA Packaged Drinking Water',
   productCategory: 'Packaged Drinking Water',
-  productSize: 'As marked on bottle',
-  accentColor: '#00B4D8',
   manufacturerName: 'M/S Punj Aab Aqua Lip',
   manufacturerAddress: 'Khasara No-162/2, Khatano-165/2, Patli Hajipur, Gurgaon - 122506 (HR), India',
   fssaiLicNo: '10826005000980',
